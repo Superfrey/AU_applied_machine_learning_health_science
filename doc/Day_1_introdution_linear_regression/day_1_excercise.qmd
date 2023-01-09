@@ -95,4 +95,93 @@ plot(MSE_error_plot)
 head(MSE_poly,7)
 ```
 
+Checkpoint 5: b
+Training- and test errors
+
+(a) Explain the difference between a training- and a test data. Also explain
+the difference between training- and test error.
+
+The training data is used for training the models for predicting a certain outcome. The test data is used to test the trained model, to evaluate how well the trained model are predicting. The tools for evaluate the models performance is based on training and testing error. The training error are the error from the devolped model on the trained data point, where it is the same for testing, just focusing on the testing data points.
+
+(b) Argue why we typically are interested in good model performance in terms of low test error rather than in terms of low training error.
+
+We like to prioritize low error test results because the fitted model true evaluation depends how it fit with the validation points from test data set.
+
+
+**Checkpoint 6: b Do section 2.4 conceptual exercise 3. in ISL (ISL page 53).**
+
+3. We now revisit the bias-variance decomposition.
+(a) Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.
+
+
+```{r, echo=FALSE}
+plot(NULL, xlim=c(0,1), ylim=c(0,1), xlab="Flexibility", ylab="Error")
+
+# Generate fake data for the curves
+x <- seq(0, 1, length.out=100)
+bias <- x^2
+variance <- (1 - x)^2
+training_error <- bias + variance
+test_error <- training_error + 0.1*x
+bayes <- 0.25*x
+
+# Add the curves to the plot
+lines(x, bias, col="red")
+lines(x, variance, col="blue")
+lines(x, training_error, col="green")
+lines(x, test_error, col="orange")
+lines(x, bayes, col="purple")
+
+# Add a legend
+legend("topright", c("Bias", "Variance", "Training Error", "Test Error", "Bayes Error"), col=c("red", "blue", "green", "orange", "purple"), lty=1)
+
+# Annotate the plot to show the expected behavior of the training error and test error curves
+arrows(x0=0.7, y0=0.6, x1=0.9, y1=0.8, length=0.1, angle=90, code=3)
+text(x=0.8, y=0.7, "Overfitting", cex=0.8)
+arrows(x0=0.2, y0=0.3, x1=0.0, y1=0.1, length=0.1, angle=90, code=3)
+text(x=0.1, y=0.2, "Underfitting", cex=0.8)
+```
+
+**(b) Explain why each of the five curves has the shape displayed in part (a).**
+
+As training error decreases because of better fitting, howvere over fitting is introduced and causes increase in test error. Bias decrease in training data with high complexity. However, the trade off is that variance in the test are increasing. So we want to chose the flexibility point were bias and variance in combination are lowest.
+
+Checkpoint 7:
+
+Explain, in your own words, what a training set is, a validation set is, and a
+test set is? Why is this partition of data needed? Explain how k-fold cross validation
+is implemented. Explain how leave-one-out (LOO) cross validation is implemented.
+What are the advantages and disadvantages of k-fold cross validation relative to the
+validation set approach and the LOO cross validation approach?
+
+Training set is data that is used for traing the prediction model, where validation is used for evaluated how well the model predicts the outcoem in interest. 
+
+Checkpoint 8: Ï
+
+R users: By using the functions createDataPartition and createFolds we can
+create random partitions of data.
+
+• Look at the help text for these functions and use a bit of time to familiarize
+yourself with the functions.
+
+?
+
+(a) Run the command c = createDataPartition(y = 1:20, p = 0.8) and explain
+what the function does. Also describe the content of the variable c.
+
+**It creates a list of numbers (series) of partition from 1 - 20**
+
+(b) Run the command c = createFolds(y = 1:20, k = 10, returnTrain =
+TRUE) and explain what the function does. Also explain the content of the
+variable c.
+
+CreateFold split up the data in k groups. Here c are devided into 10 k-folds with 20 vector outcomes.
+
+(c) Explain why it is generally recommended to run e.g. the command set.seed(0)
+before creating the random partitions.
+
+I dont know... To set up the seed before deviding the dataset, hence obtatin reproduceability.
+
+
+
 

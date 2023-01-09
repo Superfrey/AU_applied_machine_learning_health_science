@@ -142,17 +142,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Training error is the mean of the squared difference between errors, based on the difference between observed value from the training data and predicted value from the training data set.</p>
 <p>Test error is the mean of the squared difference between errors, based on the difference between observed value from the test data set and predicted value from the training dataset.</p>
 <ol start="6" type="a">
-<li>Run the analysis with polynomial order ranging from 1 to 7 (Hint: include a for-loop in the script). For each of these seven models, make a plot of body density (ordinate) vs.&nbsp;chest circumference (abscissa) for the training- and test data as well as the model’s predictions (all three in the same plot). Include the plots in your report and describe/discuss the plots.</li>
+<li><p>Run the analysis with polynomial order ranging from 1 to 7 (Hint: include a for-loop in the script). For each of these seven models, make a plot of body density (ordinate) vs.&nbsp;chest circumference (abscissa) for the training- and test data as well as the model’s predictions (all three in the same plot). Include the plots in your report and describe/discuss the plots.</p></li>
+<li><p>Write your own code to make a plot of training error and test error vs.&nbsp;polynomial order (order 1 to 7). Include the plot in your report and describe/discuss the plot. Do you observe severe overfitting for some polynomial orders?</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MSE_error_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 7 rows containing missing values (`geom_point()`).
+Removed 7 rows containing missing values (`geom_point()`).
+Removed 7 rows containing missing values (`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="day_1_excercise_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MSE_poly,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<pre><code>  m     errTrain      errTest i   ratioError logerrTest logerrTrain
+1 1 9.783850e-05 3.363816e-04 1 3.438131e+00  -7.997264   -9.232192
+2 2 5.942656e-05 4.129855e-04 2 6.949511e+00  -7.792098   -9.730769
+3 3 5.884494e-05 4.641982e-04 3 7.888498e+00  -7.675199   -9.740605
+4 4 2.318943e-05 4.177533e-02 4 1.801481e+03  -3.175449  -10.671814
+5 5 1.818859e-07 7.715585e+00 5 4.241992e+07   2.043242  -15.519886
+6 6 1.605274e-07 4.971764e+00 6 3.097143e+07   1.603775  -15.644801
+7 7 5.927753e-14 1.756514e+04 7 2.963204e+17   9.773672  -30.456546</code></pre>
 </div>
 </div>
-<ol start="7" type="a">
-<li>Write your own code to make a plot of training error and test error vs.&nbsp;polynomial order (order 1 to 7). Include the plot in your report and describe/discuss the plot. Do you observe severe overfitting for some polynomial orders?</li>
+<p>Checkpoint 5: b Training- and test errors</p>
+<ol type="a">
+<li>Explain the difference between a training- and a test data. Also explain the difference between training- and test error.</li>
 </ol>
+<p>The training data is used for training the models for predicting a certain outcome. The test data is used to test the trained model, to evaluate how well the trained model are predicting. The tools for evaluate the models performance is based on training and testing error. The training error are the error from the devolped model on the trained data point, where it is the same for testing, just focusing on the testing data points.</p>
+<ol start="2" type="a">
+<li>Argue why we typically are interested in good model performance in terms of low test error rather than in terms of low training error.</li>
+</ol>
+<p>We like to prioritize low error test results because the fitted model true evaluation depends how it fit with the validation points from test data set.</p>
+<p>Checkpoint 6: b Do section 2.4 conceptual exercise 3. in ISL (ISL page 53).</p>
+<ol start="3" type="1">
+<li>We now revisit the bias-variance decomposition.</li>
+</ol>
+<ol type="a">
+<li>Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="day_1_excercise_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Explain why each of the five curves has the shape displayed in part (a).</li>
+</ol>
+<p>As training error decreases, over fitting is introduced and causes increase in test error.</p>
 </section>
 </section>
 

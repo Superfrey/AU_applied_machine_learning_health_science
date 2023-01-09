@@ -5,13 +5,15 @@
 # PMR Dec 2022
 
 # ---- Import libraries and functions ----
+library("here")
 library("stats")
 library("ggplot2")
 library("caret")
 source("polyExpand.R")
+source(here("R/library_packages.R"))
 
 # ---- Import data ----
-data = read.table('bodyMeasurementsSingleCV.txt',header = TRUE, sep = ",")
+data = read.table(here('data-raw/bodyMeasurementsSingleCV.txt'),header = TRUE, sep = ",")
 
 # Extract predictors and response variables from tables into X and y
 I = colnames(data)=='Body_Density' # Identify column with response variable (body density)
@@ -42,14 +44,14 @@ for (idx1 in 1:K){
     ytrain = y[I_train,, drop = FALSE]
     Xtest = X[I_test,, drop = FALSE]
     ytest = y[I_test,, drop = FALSE]
-    
+
     # Iterate over polynomial orders
     for (m in M){
 
         # Create polynomial expansion of predictor variables
         XtrainPol = polyExpand(Xtrain,m);
         XtestPol = polyExpand(Xtest,m);
-        
+
         # Scale predictor variables
         scl = apply(XtrainPol,2,sd)
         XtrainPol = as.data.frame(scale(XtrainPol, scale = scl, center = FALSE))
@@ -61,7 +63,7 @@ for (idx1 in 1:K){
         # Use model to predict
         yhatTrain = predict(fit, newdata = XtrainPol)
         yhatTest = predict(fit, newdata = XtestPol)
-        
+
         # Compute training and test error
         errTrain[idx1,m] = mean(as.matrix((ytrain-yhatTrain)^2))
         errTest[idx1,m] = mean(as.matrix((ytest-yhatTest)^2))
@@ -69,7 +71,7 @@ for (idx1 in 1:K){
 }
 
 # ---- Plot the data, and the model predictions ----
-(ggplot() + 
+(ggplot() +
    labs(x = "model order", y = "mse")+
    geom_point(aes(x = M, y = apply(errTrain,2,mean), colour = "blue")) +
    geom_line (aes(x = M, y = apply(errTrain,2,mean), colour = "blue")) +

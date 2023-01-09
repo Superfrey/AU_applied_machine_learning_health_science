@@ -131,8 +131,6 @@ print(MSE)
 #include multiple plot function from loop
 
 datalist = list()
-# or pre-allocate for slightly more efficiency
-datalist = vector("list", length = n)
 
 results <- for (i in pol) {
 
@@ -181,10 +179,37 @@ results <- for (i in pol) {
 MSE_poly <- do.call(rbind, datalist)
 
 MSE_poly <- MSE_poly %>%
-    mutate(ratioError=  errTest / errTrain)
+    mutate(ratioError=  errTest / errTrain,
+           logerrTest = log(errTest),
+           logerrTrain = log(errTrain))
+
 
 MSE_error_plot <- MSE_poly %>%
     ggplot(aes(m,ratioError), label=Name)+
     geom_point(colour = "green") +
-    geom_point(aes(m,errTest), colour= "red")+
-    geom_point(aes(m,errTrain), colour= "blue")
+    geom_point(aes(m,logerrTest), colour= "red")+
+    geom_point(aes(m,logerrTrain), colour= "blue") +
+    ylim(c(-1,0.5))
+
+
+
+# Set up the plot
+bv_to<- plot(NULL, xlim=c(0,1), ylim=c(0,1), xlab="Flexibility", ylab="Error")
+
+# Generate fake data for the curves
+x <- seq(0, 1, length.out=100)
+bias <- x^2
+variance <- (1 - x)^2
+training_error <- bias + variance
+test_error <- training_error + 0.1*x
+bayes <- 0.25*x
+
+# Add the curves to the plot
+lines(x, bias, col="red")
+lines(x, variance, col="blue")
+lines(x, training_error, col="green")
+lines(x, test_error, col="orange")
+lines(x, bayes, col="purple")
+
+# Add a legend
+legend("topright", c("Bias", "Variance", "Training Error", "Test Error", "Bayes Error"), col=c("red", "blue", "green", "orange", "purple"), lty=1)

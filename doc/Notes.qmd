@@ -143,6 +143,33 @@ Expert model and machine learned determined models
 We want to reduce total error from model
 - Decrease variance and bias
     - this is always a trade-off
+    bias and variance reflects the test error
+
+Bias decrease in training data with high complexity. However, variance in test are increasing.
+- find the sweet spot
 
 - We want to achieve low bias low variance
 
+
+# Points
+
+*Linear regression*
+Can be used to predict and unattainable continous measurements based on other variables.
+
+#### Model selection and model evaluation
+q- how do we choose the relevant validation technique?
+
+Validation data set approach
+- split 50/50
+- used to large sample size
+
+Leave-one-out cross validation
+- split data set with N obs into two part a traing set with n-1
+- Popular - challenge to use with larger sample size (very time consumeming)
+
+K-fold cross validation
+- random split k with approx n/k samples in each group
+- repeated and time series data measures could be used here
+
+Nested cross-validation
+- loop step-wise cross validation of training datasets
