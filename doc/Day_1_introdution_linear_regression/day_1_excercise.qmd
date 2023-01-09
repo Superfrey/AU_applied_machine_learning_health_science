@@ -1,0 +1,98 @@
+
+```{r, include=FALSE}
+library("here")
+```
+
+## Excercise Day 1
+
+### Introduction
+
+**Check point 1: Supervised learning example**
+
+*Example 1* Research questions: Could we predict HbA1c given various measurement of cholesterol, bmi, age, blood pressure, and sex.
+
+Method: Linear regression
+
+Data set: tabular data set with age, sex, body measures and biochemical measures.
+
+*Example 2*
+
+**Check point 2:**
+
+Find part from ECG nodes in ECG data to detect early high risk of CVD event. Mixed inference and prediction. As ECG have large variability, I believe to include many recordings (\> 1000).
+
+Methods: Deep learning neural network ?
+
+Data: Time to event data - ECG data for each individuals - Hospital records of CVD events
+
+Checkpoint 4: Ï) Linear regression - body density data
+In this checkpoint you will analyse the body density data using linear regression.
+The goal is to build a linear regression model to predict body density from chest
+circumference measurements.
+• Open the script main1a.m and review it to understand the different steps in the
+script. Some of the code needed to answer this checkpoint is already provided
+in the script, but you also need to do a bit of coding yourself.
+
+Use the script main1a.m / main1a.R and your code to answer the following:
+
+(a) Load the data set bodyMeasurementsSingleTrainTest.txt. Describe the data,
+what are the sizes of the training- and test sets? how many observations and
+features? what is the numerical range of the variables?
+
+test = 244 obs with 2 variables
+train = 8 obs with 2 variables
+
+
+(b) Identify the part for of the script that is used for creating the polynomial expansion
+of the input variable. Try do create polynomial expansions with different
+polynomial order from 1 to 7, how many columns/features are there in the resulting
+data matrices?
+
+n+1 for each polynomial increase (1 polynum = 1 features and 2 polynum = 2 features)
+
+
+(c) Part of the code is scaling the individual columns of the polynomial regressors.
+Explain how this scaling is done and why the scaling may be necessary (Hint:
+what is the numerical range of the individual columns?).
+
+
+
+(d) Type doc fitglm in Matlab or ?glm in R and use a bit of time to familiarize
+yourself with this function. What are the inputs to the function and what is the
+output?
+
+GLM is generalised linear model, and can be used for a variety of regression based defined familiy. The gaussian is used for linear regression with option for polynomial flexibility.
+The inputs are continuous and the output is a predicted continuous response.
+
+(e) Explain how training error and test error are quantified in the script?
+
+Training error is the mean of the squared difference between errors, based on the difference between observed value from the training data and predicted value from the training data set.
+
+Test error is the mean of the squared difference between errors, based on the difference between observed value from the test data set and predicted value from the training dataset.
+
+(f) Run the analysis with polynomial order ranging from 1 to 7 (Hint: include a
+for-loop in the script). For each of these seven models, make a plot of body
+density (ordinate) vs. chest circumference (abscissa) for the training- and test
+data as well as the model’s predictions (all three in the same plot). Include the
+plots in your report and describe/discuss the plots.
+
+```{r, include=FALSE}
+source(here("R/day_1_code/main1a.R"))
+```
+
+
+
+
+
+(g) Write your own code to make a plot of training error and test error vs. polynomial
+order (order 1 to 7). Include the plot in your report and describe/discuss
+the plot. Do you observe severe overfitting for some polynomial orders?
+
+
+
+```{r}
+plot(MSE_error_plot)
+head(MSE_poly,7)
+```
+
+
