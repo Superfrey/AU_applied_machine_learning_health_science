@@ -69,17 +69,18 @@ cmTest = confusionMatrix(data = yhatTestCat, reference = ytest$group, positive =
 cmTrain = as.data.frame(cmTrain$table)
 cmTest = as.data.frame(cmTest$table)
 
-ggplot(cmTrain, aes(Prediction,Reference, fill= Freq)) +
+cm_train_plot<- ggplot(cmTrain, aes(Prediction,Reference, fill= Freq)) +
   geom_tile() + geom_text(aes(label=Freq)) +
   scale_fill_gradient(low="darkolivegreen", high="burlywood2") +
   ggtitle("training")
 
-ggplot(cmTest, aes(Prediction,Reference, fill= Freq)) +
+cm_test_plot<-ggplot(cmTest, aes(Prediction,Reference, fill= Freq)) +
   geom_tile() + geom_text(aes(label=Freq)) +
   scale_fill_gradient(low="darkolivegreen", high="burlywood2") +
   ggtitle("test")
 
-## ---- Evaluate classifier performance ----
+grid.arrange(cm_train_plot,cm_test_plot, ncol = 2)
+## -- <- ±±±±{{}{-- Evaluate classifier performance ----
 # Accuracy
 accTrain = sum(yhatTrainCat==ytrain$group)/length(ytrain$group);
 accTest = sum(yhatTestCat==ytest$group)/length(ytest$group);
@@ -89,3 +90,26 @@ accTest
 errTrain = 1 - accTrain;
 errTest = 1 - accTest;
 errTest
+errTrain
+
+
+evaluation_matrix <- function(TP,TN,FP,FN){
+    true_pr    <- TP / (TP+FP)
+    false_pr    <- 1-true_pr
+
+    true_nr    <- TN / (TN+FN)
+    false_nr    <- 1-true_nr
+
+    sens <- TP/ (TP+FN)
+    spec <- TN/ (TN+FP)
+
+
+    est <- cbind(true_pr,false_pr,true_nr,false_nr,sens, spec)
+    return(est)
+}
+cmTrain
+report_prec_train <- evaluation_matrix(cmTrain[4,3],cmTrain[1,3],cmTrain[2,3],cmTrain[3,3])
+report_prec_test <- evaluation_matrix(cmTest[4,3],cmTest[1,3],cmTest[2,3],cmTest[3,3])
+
+report_prec_test
+report_prec_train

@@ -120,19 +120,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Method: Linear regression</p>
 <p>Data set: tabular data set with age, sex, body measures and biochemical measures.</p>
 <p><em>Example 2</em></p>
-<p>##Check point 2:</p>
+</section>
+<section id="check-point-2" class="level2">
+<h2 class="anchored" data-anchor-id="check-point-2">Check point 2:</h2>
 <p>Find part from ECG nodes in ECG data to detect early high risk of CVD event. Mixed inference and prediction. As ECG have large variability, I believe to include many recordings (&gt; 1000).</p>
 <p>Methods: Deep learning neural network ?</p>
 <p>Data: Time to event data - ECG data for each individuals - Hospital records of CVD events</p>
 </section>
-<section id="checkpoint-4-ï-linear-regression---body-density-data-in-this-checkpoint-you-will-analyse-the-body-density-data-using-linear-regression.-the-goal-is-to-build-a-linear-regression-model-to-predict-body-density-from-chest-circumference-measurements.-open-the-script-main1a.m-and-review-it-to-understand-the-different-steps-in-the-script.-some-of-the-code-needed-to-answer-this-checkpoint-is-already-provided-in-the-script-but-you-also-need-to-do-a-bit-of-coding-yourself." class="level2">
-<h2 class="anchored" data-anchor-id="checkpoint-4-ï-linear-regression---body-density-data-in-this-checkpoint-you-will-analyse-the-body-density-data-using-linear-regression.-the-goal-is-to-build-a-linear-regression-model-to-predict-body-density-from-chest-circumference-measurements.-open-the-script-main1a.m-and-review-it-to-understand-the-different-steps-in-the-script.-some-of-the-code-needed-to-answer-this-checkpoint-is-already-provided-in-the-script-but-you-also-need-to-do-a-bit-of-coding-yourself.">Checkpoint 4: Ï) Linear regression - body density data In this checkpoint you will analyse the body density data using linear regression. The goal is to build a linear regression model to predict body density from chest circumference measurements. • Open the script main1a.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself.</h2>
+<section id="checkpoint-4-ï-linear-regression---body-density-data-in-this-checkpoint-you-will-analyse-the-body-density-data-using-linear-regression." class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-4-ï-linear-regression---body-density-data-in-this-checkpoint-you-will-analyse-the-body-density-data-using-linear-regression.">Checkpoint 4: Ï) Linear regression - body density data In this checkpoint you will analyse the body density data using linear regression.</h2>
+<p>The goal is to build a linear regression model to predict body density from chest circumference measurements. • Open the script main1a.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself.</p>
 <p>Use the script main1a.m / main1a.R and your code to answer the following:</p>
 <ol type="a">
-<li><p>Load the data set bodyMeasurementsSingleTrainTest.txt. Describe the data, what are the sizes of the training- and test sets? how many observations and features? what is the numerical range of the variables?</p>
-<p><em>test = 244 obs with 2 variables train = 8 obs with 2 variables</em></p></li>
-<li><p>Identify the part for of the script that is used for creating the polynomial expansion of the input variable. Try do create polynomial expansions with different polynomial order from 1 to 7, how many columns/features are there in the resulting data matrices?</p>
-<p><em>n+1 for each polynomial increase (1 polynum = 1 features and 2 polynum = 2 features)</em></p></li>
+<li>Load the data set bodyMeasurementsSingleTrainTest.txt. Describe the data, what are the sizes of the training- and test sets? how many observations and features? what is the numerical range of the variables?</li>
+</ol>
+<p><em>test = 244 obs with 2 variables train = 8 obs with 2 variables</em></p>
+<ol start="2" type="a">
+<li>Identify the part for of the script that is used for creating the polynomial expansion of the input variable. Try do create polynomial expansions with different polynomial order from 1 to 7, how many columns/features are there in the resulting data matrices?</li>
+</ol>
+<p><em>n+1 for each polynomial increase (1 polynum = 1 features and 2 polynum = 2 features)</em></p>
+<ol start="3" type="a">
 <li><p>Part of the code is scaling the individual columns of the polynomial regressors. Explain how this scaling is done and why the scaling may be necessary (Hint: what is the numerical range of the individual columns?).</p></li>
 <li><p>Type doc fitglm in Matlab or ?glm in R and use a bit of time to familiarize yourself with this function. What are the inputs to the function and what is the output?</p></li>
 </ol>
@@ -200,33 +207,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>R users: By using the functions createDataPartition and createFolds we can create random partitions of data.</p>
 <p>• Look at the help text for these functions and use a bit of time to familiarize yourself with the functions.</p>
 <ol type="a">
-<li><p>Run the command c = createDataPartition(y = 1:20, p = 0.8) and explain what the function does. Also describe the content of the variable c.</p>
-<p>It creates a list of numbers (series) of partition from 1 - 20</p></li>
-<li><p>Run the command c = createFolds(y = 1:20, k = 10, returnTrain = TRUE) and explain what the function does. Also explain the content of the variable c.</p>
-<p>CreateFold split up the data in k groups. Here c are devided into 10 k-folds with 20 vector outcomes.</p></li>
-<li><p>Explain why it is generally recommended to run e.g.&nbsp;the command set.seed(0) before creating the random partitions.</p>
-<p>To set up the seed before deviding the dataset and doing the analysis, hence obtain reproduceability.</p></li>
+<li>Run the command c = createDataPartition(y = 1:20, p = 0.8) and explain what the function does. Also describe the content of the variable c.</li>
 </ol>
+<p><em>It creates a list of numbers (series) of partition from 1 - 20</em></p>
+<ol start="2" type="a">
+<li>Run the command c = createFolds(y = 1:20, k = 10, returnTrain = TRUE) and explain what the function does. Also explain the content of the variable c.</li>
+</ol>
+<p><em>CreateFold split up the data in k groups. Here c are devided into 10 k-folds with 20 vector outcomes.</em></p>
+<ol start="3" type="a">
+<li>Explain why it is generally recommended to run e.g.&nbsp;the command set.seed(0) before creating the random partitions.</li>
+</ol>
+<p><em>To set up the seed before deviding the dataset and doing the analysis, hence obtain reproduceability.</em></p>
 </section>
 <section id="check-point-9" class="level2">
 <h2 class="anchored" data-anchor-id="check-point-9">Check point 9</h2>
 <p>Linear regression - body density data - cross validation In this checkpoint you will analyse the body density data using linear regression (with polynomial regressors), and the goal is to build a linear regression model to predict body density from chest circumference measurements. You will use k-fold cross validation to evaluate model performance for different polynomial order.</p>
 <p>• Open the script main1b.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself. Use the script main1b.m / main1b.R and your code to answer the following:</p>
 <ol type="a">
-<li><p>Load the data set bodyMeasurementsSingleCV.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
-<p>252 obs and 2 features</p></li>
-<li><p>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross validation?</p>
-<p>10 k-folds</p></li>
-<li><p>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</p>
-<p>The fist part of the loop is slitting the training data and this will be done K times (10 in this case). Each data set will be included another loop with conducting training a linear model with flexibility of order m ( up till 7 in this case). Each model will tested on each test data set and errors estimates from train and test evaluation will be extrated.</p></li>
-<li><p>Run the script. Look at the plot of training and test error (cross-validation error) (ordinate) vs.&nbsp;polynomial order (abscissa) (both error curves in same plot). Include the plot in your report and describe/discuss it. Are the curves as expected? do you observe severe overfitting (compare with your result from Checkpoint 4)? if not, try to explain why not (Hint: look at the number of training observations and model flexibility). For which polynomial order do you observe the lowest test error?</p></li>
+<li>Load the data set bodyMeasurementsSingleCV.txt. Describe the data, what is the size of the data set? how many observations and features?</li>
+</ol>
+<p><em>252 obs and 2 features</em></p>
+<ol start="2" type="a">
+<li>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross validation?</li>
+</ol>
+<p><em>10 k-folds</em></p>
+<ol start="3" type="a">
+<li>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</li>
+</ol>
+<p><em>The fist part of the loop is splitting the training data and this will be done K times (10 in this case). Each data set will be included another loop with conducting training a linear model with flexibility of order m ( up till 7 in this case). Each model will tested on each test data set and errors estimates from train and test evaluation will be extracted.</em></p>
+<ol start="4" type="a">
+<li>Run the script. Look at the plot of training and test error (cross-validation error) (ordinate) vs.&nbsp;polynomial order (abscissa) (both error curves in same plot). Include the plot in your report and describe/discuss it. Are the curves as expected? do you observe severe overfitting (compare with your result from Checkpoint 4)? if not, try to explain why not (Hint: look at the number of training observations and model flexibility). For which polynomial order do you observe the lowest test error?</li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="excercise_doc_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<pre><code>We do not observe the same severity as the earlier models. The overfitting seem first to be slightly introduced after 5 orders in polynomial. Again the best model would be using 2 orders in polynomial as this has the lowest value in MSEtest. The improvement of the model is expected as we are using more data for training dataset and we are including cross-validation.</code></pre>
+<p><em>We do not observe the same severity as the earlier models. The overfitting seem first to be slightly introduced after 5 orders in polynomial. Again the best model would be using 2 orders in polynomial as this has the lowest value in MSEtest. The improvement of the model is expected as we are using more data for training dataset (90%) and we are including cross-validation.</em></p>
 </section>
 <section id="excercise-day-2" class="level1">
 <h1>Excercise Day 2</h1>
@@ -264,21 +281,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>[Three samples]here::here(“doc/pics/Screenshot%202023-01-11%20at%2008.30.51.png”))</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>log_funk <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>post_prob_1 <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span>x)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>post_prob_0 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>post_prob_1</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Y_Ix <span class="ot">&lt;-</span> post_prob_1<span class="sc">/</span>post_prob_0</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(Y_Ix)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>log_funk <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>post_prob_1 <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span>x)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>post_prob_0 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>post_prob_1</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Y_Ix <span class="ot">&lt;-</span> post_prob_1<span class="sc">/</span>post_prob_0</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(Y_Ix)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p_v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> p_v) {</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  y_val <span class="ot">&lt;-</span> <span class="fu">log_funk</span>(i)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(y_val)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p_v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> p_v) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  y_val <span class="ot">&lt;-</span> <span class="fu">log_funk</span>(i)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(y_val)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2689414
 [1] 0.7310586
@@ -290,12 +307,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="checkpoint-11-logistic-regression---csf-biomarker-data">Checkpoint 11: Logistic regression - CSF biomarker data</h2>
 <p>In this checkpoint you will analyse the CSF biomarker data using logistic regression. The goal of the analysis is to build a logistic regression model to predict group membership (control/impaired) from a single CSF feature tau. • Open the script main2a.m / main2a.R and review it to understand the different steps in the script.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"R/day_2_code/main2a.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"R/day_2_code/main2a.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 <ol type="a">
-<li><p>Run the first code section %% Import data etc.. What is the size of the data set? How many features and observations? Describe the response variable y, what type of variable is it and what is its content? How many subjects are there in each group?</p>
-<p>100 obs and 131 features</p></li>
+<li>Run the first code section %% Import data etc.. What is the size of the data set? How many features and observations? Describe the response variable y, what type of variable is it and what is its content? How many subjects are there in each group?</li>
 </ol>
+<p><em>100 obs and 131 features</em></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -304,32 +324,110 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <ol start="2" type="a">
-<li><p>Explain how data is divided into a training set and a test set, and explain the meaning of stratification. Run the second code section %% Divide into training and test sets. Compute the class proportions in the training set and in the test set and report these, and verify that class proportions are preserved after the data partitioning.</p>
-<p>By using the code createDataPartition, and specify that Y should be account for the two outcomes, and define that 90% of data goes to training.</p></li>
-<li><p>Run the code section %% Train model, predict, and plot model. Describe the variable catInfo and its content. Describe the model outputs yhatTrainProb and yhatTestProb, what does these represent? Describe the variables yhatTrain and yhatTest, what do these represent? Include the plot of model output vs.&nbsp;input, describe the plot, and explain how classification can be performed based on this plot.</p></li>
+<li>Explain how data is divided into a training set and a test set, and explain the meaning of stratification. Run the second code section %% Divide into training and test sets. Compute the class proportions in the training set and in the test set and report these, and verify that class proportions are preserved after the data partitioning.</li>
 </ol>
-<p><em>catInfo is the variable including the labels of the group response (impaired/control). yhatTrainProb is the predicted groups in training data set based on the trained model, and yhatTestProb is the predicted groups in the testing data set based on the trained model (validation of the model). yhatTrain, yhatTest </em></p>
+<p><em>By using the code createDataPartition, and specify that Y should be account for the two outcomes, and define that 90% of data goes to training.</em></p>
+<ol start="3" type="a">
+<li>Run the code section %% Train model, predict, and plot model. Describe the variable catInfo and its content. Describe the model outputs yhatTrainProb and yhatTestProb, what does these represent? Describe the variables yhatTrain and yhatTest, what do these represent? Include the plot of model output vs.&nbsp;input, describe the plot, and explain how classification can be performed based on this plot.</li>
+</ol>
+<p><em>catInfo is the variable including the labels of the group response (impaired/control). yhatTrainProb is the predicted groups in training data set based on the trained model, and yhatTestProb is the predicted groups in the testing data set based on the trained model (validation of the model). yhatTrain and yhatTest are rounded the probabilities of yhatTrainProb and yhatTestProb to a single digit, a 0 or 1 to be classified as imparied or control. Approximately, if the tau value was above 6.5 you had a higher probability for being in imparired compared to control</em></p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="excercise_doc_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<pre><code>Given the xi each observations probability from training data are displayed add more</code></pre>
 <ol start="4" type="a">
 <li>In the third code section, the model predictions are converted to categorical data to be used as input to the confusionchart (Matlab) confusionMatrix (R) function for plotting the confusion matrix. Look at the help text for this function and use a bit of time to familiarize yourself with the function. Run the forth code section %% Plot confusion matrix, include the plot in your report, and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
 </ol>
+<p><em>When plotting the confusion matrix, we observe the the abbility of the trained model to predict outcome, hence its performance compared with th actual observation in both the traing and testing dataset, retrospectively</em></p>
+<p><em>Based on visual observing the plots and estimates of classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity, the models performance are quite poor especially to detect observation with impaired status. This are also reflected by the low sensitivity and true positive predictive value. On the other hand the model performs well to detect, observations in control group, which are the reason the error rate accuracy does not have too bad performance.</em></p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eecho: false</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(cm_train_plot, cm_test_plot, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Training data</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>report_prec_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     true_pr false_pr   true_nr  false_nr      sens      spec
+[1,]     0.5      0.5 0.7532468 0.2467532 0.2692308 0.8923077</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>accTrain <span class="co">#accuracy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7142857</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>errTrain <span class="co">#error rate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2857143</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testing data</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>report_prec_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     true_pr false_pr   true_nr  false_nr sens      spec
+[1,]     0.5      0.5 0.8571429 0.1428571  0.5 0.8571429</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>accTest <span class="co">#accuracy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7777778</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>errTest <span class="co">#error rate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2222222</code></pre>
+</div>
 </div>
 <ol start="5" type="a">
 <li>You will now do almost the same analysis, but you will now use 10-fold cross-validation for model evaluation. Open the script main2b.m / main2b.R and review it to understand the different steps in the script. Run the script. Include the plot of the confusion matrices for the trainingand test/validation data in you report and describe/discuss it. Also explain how the confusion matrices are computed across the cross-validation iterations. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
 </ol>
+<p><em>When using the cross-validation, we are having a loop with K (10 in this case) different training and testing data set. Based on the loop, we estimate the average values from the loop estimates into the confusion matrix. The new developed model with cross-validation have higher accuracy and lower error rate in training data, compare to the simpler model from main2a, however the testing data are more imprecise compared to earlier model. Again, the model performs well, to find true control and have high specificity. The sensitivity was improved in the training, but performed horrible in the testing data set, with no sensitivity at all to capture impaired</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|echo: false</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(cm_train_plot,cm_test_plot, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Training data</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>report_prec_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       true_pr  false_pr   true_nr  false_nr sens      spec
+[1,] 0.6666667 0.3333333 0.7820513 0.2179487 0.32 0.9384615</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>accTrain[idx1] <span class="co">#accuracy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7666667</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>errTrain[idx1] <span class="co">#error rate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2333333</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testing data</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>report_prec_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     true_pr false_pr   true_nr  false_nr sens      spec
+[1,]       0        1 0.6666667 0.3333333    0 0.8571429</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>accTest[idx1] <span class="co">#accuracy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>errTest[idx1] <span class="co">#error rate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4</code></pre>
+</div>
+</div>
 </section>
 <section id="checkpoint-12-regularization" class="level2">
 <h2 class="anchored" data-anchor-id="checkpoint-12-regularization">Checkpoint 12: Regularization</h2>
 <ol type="a">
-<li><p>Explain when and why it may be necessary to use model regularization.</p>
-<p>To constrain the flexibility/complexity of the model and decrease the MSE, .</p></li>
+<li>Explain when and why it may be necessary to use model regularization.</li>
+</ol>
+<p><em>To constrain the flexibility/complexity of the model and decrease the MSE. Here our goal is to minimize the error caused by variance and bias, and in the end improve the robustness of the models ability to predict, and prevent overfitting</em></p>
+<ol start="2" type="a">
 <li><ol type="1">
 <li>Write down the penalized cost function for linear regression for each of the following penalty/shrinkage terms: (i) ridge (ℓ2), (ii) lasso (ℓ1).</li>
 </ol></li>
@@ -346,9 +444,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Provide a sketch of how coefficient estimates typically change with the strength of the regularization parameter λ for the ridge and the lasso penalty, respectively. Describe/discuss the curves and their similarities/differences.</li>
 </ol>
 <p><em>Ridge /</em> <em>Lasso</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-18-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <p><img src="Screenshot%202023-01-11%20at%2010.58.46.png" class="img-fluid" width="296"></p>
 <p><img src="desktop/r_directory/courses/AU_applied_machine_learning_health_science/doc/pics/Screenshot%202023-01-11%20at%2010.58.24.png" class="img-fluid" width="296"></p>
-<pre><code>In ridge, all coefficients are shrinkaging collectively, where in lasso som coef shrink to 0 and som e increases in beta value.</code></pre>
+<p><em>Both regularization methods are shrinking values to improve model performance. In ridge, all coefficients are shrinkage collectively, where in lasso some coefficients are shrinkage to 0 and some increases in beta value.</em></p>
 <ol type="a">
 <li>Provide a sketch of typical training error and test error on a single plot, as a function of the regularization parameter λ. λ should be on the x-axis, and the y-axis should represent the values for each curve. Make sure to label each one.</li>
 </ol>
@@ -448,27 +557,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We are given n = 7 observations in p = 2 dimensions. For each observation, there is an associated class label. Obs. X1 X2 Y 1 3 4 Red 2 2 2 Red 3 4 4 Red 4 1 4 Red 5 2 1 Blue 6 4 3 Blue 7 4 1 Blue Sketch the observations.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hyper <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x2_kor  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>x1<span class="dv">-3</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x1_kor  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>x2<span class="dv">-2</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    kor <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x1_kor,x2_kor)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(kor)}</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hyper</span>(<span class="dv">3</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>hyper <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>x2_kor  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>x1<span class="dv">-3</span> </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>x1_kor  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>x2<span class="dv">-2</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    kor <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x1_kor,x2_kor)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(kor)}</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hyper</span>(<span class="dv">3</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     x1_kor x2_kor
 [1,]      2      4</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x1 =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>),</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x2 =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>),</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"blue"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x1 =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>),</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x2 =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>),</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"blue"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="excercise_doc_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <ol start="2" type="a">
@@ -544,7 +653,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Run the analysis. Plot the training error and the test error as a function of the regularization parameter C. Include the plot in your report and describe/discuss it. Also discuss the curves in terms of the bias-variance trade-off. How would you choose the “best” model? For the selected model report the training and test error.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"R/day_2_code/main4a.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"R/day_2_code/main4a.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "cross-validation iteration 1 of 10"
 [1] "cross-validation iteration 2 of 10"
@@ -691,9 +800,9 @@ rank                                feature beta_med        beta_mean
 129                Beta_2_Microglobulin 0.0003624839198170  0.0018110132072159
 130                               I_309 0.0001458200548108  0.0007150844221072</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(error_plot_svm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(error_plot_svm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="excercise_doc_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <pre><code>with higher C values error rate in testing data set deacrease until at some point near log(C) = 6. Hence, I would choose a odel fittet with a log(C) values at 6.</code></pre>
@@ -704,9 +813,9 @@ rank                                feature beta_med        beta_mean
 <li><p>Include the plot with the number of support vectors as a function of C in your report and describe/discuss it.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(plot_sv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(plot_sv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="excercise_doc_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <pre><code>Increase of C includes more supporting vectors, which make sence bacuase the margin increases.</code></pre>
@@ -714,24 +823,24 @@ rank                                feature beta_med        beta_mean
 <li>Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>m_rates_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>m_rates_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         control impaired
 imparied      52      200
 control      645        3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluation_matrix</span>(m_rates_train[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_train[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_train[<span class="dv">1</span>,<span class="dv">1</span>],m_rates_train[<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluation_matrix</span>(m_rates_train[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_train[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_train[<span class="dv">1</span>,<span class="dv">1</span>],m_rates_train[<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       true_pr  false_pr   true_nr   false_nr      sens      spec
 [1,] 0.7936508 0.2063492 0.9852217 0.01477833 0.9852217 0.7936508</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>m_rates_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>m_rates_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         control impaired
 imparied       9       19
 control       69        3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluation_matrix</span>(m_rates_test[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_test[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_test[<span class="dv">1</span>,<span class="dv">1</span>],m_rates_test[<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluation_matrix</span>(m_rates_test[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_test[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_test[<span class="dv">1</span>,<span class="dv">1</span>],m_rates_test[<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       true_pr  false_pr   true_nr  false_nr      sens      spec
 [1,] 0.6785714 0.3214286 0.8636364 0.1363636 0.8636364 0.6785714</code></pre>
@@ -805,8 +914,8 @@ With the regularitation we keep the architecture of the model, and impoving wieg
 <p>insert figure</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="dv">131</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>parameters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="dv">131</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>parameters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1200</code></pre>
 </div>
@@ -822,8 +931,8 @@ With the regularitation we keep the architecture of the model, and impoving wieg
 <p>I will chose model with log(lambda) = -5, because it has the best performance in error rate in traning and test set combined. I assume that the bias has decreased, and variance has increased, which give a small increase in training dataset. However the sweetspot between these can be found at -5.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#source(here("R/day_3_code/main5a.R"))</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(error_plot)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co">#source(here("R/day_3_code/main5a.R"))</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(error_plot)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="8" type="a">
 <li><p>Can we interpret the weights/coefficients of a neural network in the same way as we did for logistic regression? Can we identify important features by looking at the weights directly?</p>
@@ -850,84 +959,84 @@ With the regularitation we keep the architecture of the model, and impoving wieg
 <li>Calculate and report the principal component scores zi1, zi2, and zi3 for each of the five data points.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>zi <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2,x3,o11,o12,o13)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    z <span class="ot">=</span> x1<span class="sc">*</span>o11 <span class="sc">+</span> x2<span class="sc">*</span>o12 <span class="sc">+</span> x3<span class="sc">*</span>o13</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(z)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># x1</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>z11<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>z21 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>z31 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># x2</span></span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>z12<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>z22 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
-<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>z32 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
-<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="co"># x3</span></span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>z13<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>z23 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>z33 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a><span class="co"># x4</span></span>
-<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>z14 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>)<span class="co"># z1</span></span>
-<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>z24 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
-<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>z34 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
-<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a><span class="co"># x5</span></span>
-<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>z15 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>)<span class="co"># z1</span></span>
-<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>z25 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
-<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>z35 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>zi <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2,x3,o11,o12,o13)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    z <span class="ot">=</span> x1<span class="sc">*</span>o11 <span class="sc">+</span> x2<span class="sc">*</span>o12 <span class="sc">+</span> x3<span class="sc">*</span>o13</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(z)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="co"># x1</span></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>z11<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>z21 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>z31 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a><span class="co"># x2</span></span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>z12<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>z22 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>z32 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a><span class="co"># x3</span></span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>z13<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
+<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>z23 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>z33 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a><span class="co"># x4</span></span>
+<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a>z14 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>)<span class="co"># z1</span></span>
+<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a>z24 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a>z34 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb58-31"><a href="#cb58-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-32"><a href="#cb58-32" aria-hidden="true" tabindex="-1"></a><span class="co"># x5</span></span>
+<span id="cb58-33"><a href="#cb58-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-34"><a href="#cb58-34" aria-hidden="true" tabindex="-1"></a>z15 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>)<span class="co"># z1</span></span>
+<span id="cb58-35"><a href="#cb58-35" aria-hidden="true" tabindex="-1"></a>z25 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb58-36"><a href="#cb58-36" aria-hidden="true" tabindex="-1"></a>z35 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
 <li>Calculate and report how big a proportion of the total variance is captured by each of the individual individual principal components (PV E1, PV E2, and PV E3). Create a scree plot from these and describe and comment on the plot.</li>
 </ol>
 <p>PV E1</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>PV_E1 <span class="ot">&lt;-</span> (z11<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z12<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z13<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z14<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z15<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>PV_E1 <span class="ot">&lt;-</span> (z11<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z12<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z13<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z14<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z15<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>PV_E2 <span class="ot">&lt;-</span> (z21<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z22<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z23<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z24<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z25<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>PV_E2 <span class="ot">&lt;-</span> (z21<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z22<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z23<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z24<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z25<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>PV_E3 <span class="ot">&lt;-</span> (z31<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z32<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z33<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z34<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z35<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>PV_E3 <span class="ot">&lt;-</span> (z31<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z32<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z33<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z34<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z35<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>tot_var <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,PV_E1,PV_E2,PV_E3), <span class="at">nrow=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>tot_var <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,PV_E1,PV_E2,PV_E3), <span class="at">nrow=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(tot_var[,<span class="dv">2</span>], <span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab =</span> <span class="st">"zi"</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(tot_var[,<span class="dv">2</span>], <span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab =</span> <span class="st">"zi"</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="excercise_doc_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>((z11<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z21<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z31<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>((z11<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z21<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z31<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -1.0086</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>((z12<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z22<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z32<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>((z12<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z22<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z32<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Inf</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>((z13<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z23<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z33<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>((z13<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z23<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z33<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NaN</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>((z14<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z24<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z34<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>((z14<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z24<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z34<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Inf</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>((z15<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z25<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z35<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>((z15<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z25<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z35<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.0086</code></pre>
 </div>

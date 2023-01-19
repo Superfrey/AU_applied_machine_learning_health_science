@@ -112,7 +112,7 @@ for (idx1 in 1:K) {
 }
 
 # ---- Plot error vs. regularization strength ----
-(ggplot() +
+error_rate_plot <- (ggplot() +
    labs(x = "log2(lambda)", y = "error rate")+
    geom_point(aes(x = log2(lambdas), y = apply(errTrain,2,mean), colour = "blue")) +
    geom_line (aes(x = log2(lambdas), y = apply(errTrain,2,mean), colour = "blue")) +

@@ -79,7 +79,7 @@ for (idx1 in 1:K) {
 }
 
 # ---- Plot error vs. regularization strength ----
-(ggplot() +
+error_regular_plot <- (ggplot() +
    labs(x = "log2(lambda)", y = "mse")+
    geom_point(aes(x = log2(lambdas), y = apply(errTrain,2,mean), colour = "blue")) +
    geom_line (aes(x = log2(lambdas), y = apply(errTrain,2,mean), colour = "blue")) +
@@ -100,7 +100,7 @@ dfBmedian = melt(data.frame(Bmedian, lambda = lambdas), id.vars = "lambda", vari
 dfBmean = melt(data.frame(Bmean, lambda = lambdas), id.vars = "lambda", variable.name = "beta")
 
 # Plot
-(ggplot(dfBmedian, aes(x = log2(lambda), y = value, colour = beta)) +
+coef_regular_plot <- (ggplot(dfBmedian, aes(x = log2(lambda), y = value, colour = beta)) +
     geom_point()+
     geom_line()
 )
