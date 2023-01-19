@@ -79,7 +79,7 @@ results <- for (i in pol) {
 
 
     # Create an x axis with high resolution for plotting the trained model
-    XHighRes = data.frame(seq(min(rbind(Xtrain,Xtest)), max(rbind(Xtrain,Xtest)),length.out = 1000))
+XHighRes = data.frame(seq(min(rbind(Xtrain,Xtest)), max(rbind(Xtrain,Xtest)),length.out = 1000))
 colnames(XHighRes) = colnames(Xtrain)
 
 # Define polynomial order
@@ -115,7 +115,7 @@ errTrain = mean(data.matrix((ytrain-yhatTrain)^2))
 errTest = mean(data.matrix((ytest-yhatTest)^2))
 MSE <- cbind(m, errTrain,errTest)
 # ---- Plot the data, and the model predictions ----
-plots_lm <- (ggplot() +
+plots_lm<- (ggplot() +
      labs(x = colnames(dataTrain)[!I], y = colnames(dataTrain)[I])+
      geom_point(aes(x = XtrainPol[,1], y = ytrain[,1])) +
      geom_line(aes(x = XhighResPol[,1], y = predict(fit, newdata = data.frame(XhighResPol)))) +
@@ -179,37 +179,16 @@ results <- for (i in pol) {
 MSE_poly <- do.call(rbind, datalist)
 
 MSE_poly <- MSE_poly %>%
-    mutate(ratioError=  errTest / errTrain,
+    mutate(diffError=  errTest - errTrain,
            logerrTest = log(errTest),
            logerrTrain = log(errTrain))
 
 
 MSE_error_plot <- MSE_poly %>%
-    ggplot(aes(m,ratioError), label=Name)+
+    ggplot(aes(m,diffError), label=Name)+
     geom_point(colour = "green") +
-    geom_point(aes(m,logerrTest), colour= "red")+
-    geom_point(aes(m,logerrTrain), colour= "blue") +
-    ylim(c(-1,0.5))
+    geom_point(aes(m,errTest), colour= "red") +
+    geom_point(aes(m,errTrain), colour= "blue")+
+    scale_y_continuous(trans='log10')
+MSE_error_plot
 
-
-
-# Set up the plot
-bv_to<- plot(NULL, xlim=c(0,1), ylim=c(0,1), xlab="Flexibility", ylab="Error")
-
-# Generate fake data for the curves
-x <- seq(0, 1, length.out=100)
-bias <- x^2
-variance <- (1 - x)^2
-training_error <- bias + variance
-test_error <- training_error + 0.1*x
-bayes <- 0.25*x
-
-# Add the curves to the plot
-lines(x, bias, col="red")
-lines(x, variance, col="blue")
-lines(x, training_error, col="green")
-lines(x, test_error, col="orange")
-lines(x, bayes, col="purple")
-
-# Add a legend
-legend("topright", c("Bias", "Variance", "Training Error", "Test Error", "Bayes Error"), col=c("red", "blue", "green", "orange", "purple"), lty=1)

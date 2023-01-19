@@ -9,12 +9,12 @@ library("here")
 library("stats")
 library("ggplot2")
 library("caret")
-source("polyExpand.R")
+source(here("R/day_1_code/polyExpand.R"))
 source(here("R/library_packages.R"))
 
 # ---- Import data ----
 data = read.table(here('data-raw/bodyMeasurementsSingleCV.txt'),header = TRUE, sep = ",")
-
+head(data)
 # Extract predictors and response variables from tables into X and y
 I = colnames(data)=='Body_Density' # Identify column with response variable (body density)
 y = subset(data, select = I)
@@ -71,7 +71,7 @@ for (idx1 in 1:K){
 }
 
 # ---- Plot the data, and the model predictions ----
-(ggplot() +
+plot_k_fold <- (ggplot() +
    labs(x = "model order", y = "mse")+
    geom_point(aes(x = M, y = apply(errTrain,2,mean), colour = "blue")) +
    geom_line (aes(x = M, y = apply(errTrain,2,mean), colour = "blue")) +
@@ -80,3 +80,4 @@ for (idx1 in 1:K){
    scale_y_continuous(trans='log10') +
    scale_color_discrete(labels = c("train","test"))
 )
+

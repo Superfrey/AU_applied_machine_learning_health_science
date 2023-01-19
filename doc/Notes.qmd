@@ -7,18 +7,32 @@ editor: visual
 # Questions
 
 -   Is the book discussing lr as univariate or as multiple reg?
--   Are this mostly focused on tabular data?
--   Asses bias in data structure?
-    -   Clinical assement - why data collection- systematic errors
--   Most ML methods i clinical medicine are used for prediction, are u familiar with examples of interpabele models with interest in inference?
--   Include conlinear pridictor in a model?
-    -   depends on the question...
--   Can multiple linear regression differentiate between colinear predictors?
--   Evaluate linear vs non-linear?
-- why using gaussian model to linear regression?
 
-- Transfer learning
-    - opnion on using this with low obs dataset?
+-   Are this mostly focused on tabular data?
+
+-   Asses bias in data structure?
+
+    -   Clinical assement - why data collection- systematic errors
+
+-   Most ML methods i clinical medicine are used for prediction, are u familiar with examples of interpabele models with interest in inference?
+
+-   Include conlinear pridictor in a model?
+
+    -   depends on the question...
+
+-   Can multiple linear regression differentiate between colinear predictors?
+
+-   Evaluate linear vs non-linear?
+
+-   why using gaussian model to linear regression?
+
+-   Transfer learning
+
+    -   opnion on using this with low obs dataset?
+
+-   Steps for building a model?
+
+    -   fit - b-v tradeoff
 
 # Reading Material
 
@@ -118,11 +132,14 @@ Feature = variable
 **Feature selection**
 
 -   Based on expert knowledge of what to include
+
 -   Include all slightly relevant features
+
     -   In the fitting process, we can improve model to great fit
+
 -   The fitting should only be done in the training dataset
 
-- OBS* Too many features can add too much noise in the prediction
+-   OBS\* Too many features can add too much noise in the prediction
 
 *Suggestion:*
 
@@ -134,42 +151,129 @@ Expert model and machine learned determined models
 
 **Flexibility**
 
-- Interaction terms
-- Polynominal regression
-    - d = 2-n
-    
+-   Interaction terms
+-   Polynominal regression
+    -   d = 2-n
+
 #### Bias variance decomposition
 
-We want to reduce total error from model
-- Decrease variance and bias
-    - this is always a trade-off
-    bias and variance reflects the test error
+We want to reduce total error from model - Decrease variance and bias - this is always a trade-off bias and variance reflects the test error
 
-Bias decrease in training data with high complexity. However, variance in test are increasing.
-- find the sweet spot
+Bias decrease in training data with high complexity. However, variance in test are increasing. - find the sweet spot
 
-- We want to achieve low bias low variance
+-   We want to achieve low bias low variance
 
+#### Model selection and model evaluation
+
+q- how do we choose the relevant validation technique?
+
+Validation data set approach - split 50/50 - used to large sample size
+
+Leave-one-out cross validation - split data set with N obs into two part a traing set with n-1 - Popular - challenge to use with larger sample size (very time consumeming)
+
+K-fold cross validation - random split k with approx n/k samples in each group - repeated and time series data measures could be used here
+
+Nested cross-validation - loop step-wise cross validation of training datasets
+
+# Day 2
+
+## Classification
+
+-   Threshold baundary
+
+## Logistic regression
+
+-   probability of disease given the conditions
+-   exponential formula for linear regression
+    -   e\^B..../ 1+e\^B....
+-   LR produces siqmoid outputs
+-   LR produces linear decision boundaries
+-   Output of the model becomes log Odds
+
+## Regularization
+
+-   Controlling the complexity and flexability of the fittet model
+
+-   Prediction accuracy
+
+-   model interpretation
+
+    -   shrink to 0
+
+-   Feature selection
+
+    -   step-wise selection
+
+        -   cross validation
+
+        -   try new add of feature
+
+        -   repeat untill all included
+
+        -   chose best model
+
+        -   only use training data set
+
+### Rigde
+
+-   We add sum of all coefficients to the sum squared error
+
+-   fittet E\^2 very well then sum coef are high
+
+-   Weirdsign is lambda = sum of all coefficients
+
+-   We can contrain the fit of the coeffcients
+
+    -   How do we choose value?
+
+**Ridge penalty**
+
+Different lambda increases coefficients shrink
+
+-   Lamba is a way to control the model complexity
+
+Lasso penalty absolute sum of betacoef
+
+ridge squared sum of betacoef
+
+**Bias variance trade-off**
+
+find the swwet spot of MSE - and variance / bias
+
+## SVM
+
+### non-linear SVM
+
+-   use when there are no linear dividing options
+-   we expand our feature space
+
+## Neaural network
+
+Input are the features
+
+We start with input and end upt with out through hidden layers.
+
+Each hidden unit computes a weighted sum.
+
+Then the hidden unit transforms into output.
+
+The output computes the weighted sum into output.
+
+Each bias nodes has different error and are linked to each hidden unit and output
+
+theta = 0 = the weight (w)
+
+**Training NN**
+
+*regularization* Regression = Residual SSQ sums of squares
+
+Classification
+
+*drop out learning* - leaving nodes from hidden and input the NN - either by Lasso penalty ridge
 
 # Points
 
-*Linear regression*
-Can be used to predict and unattainable continous measurements based on other variables.
+*Linear regression* Can be used to predict and unattainable continous measurements based on other variables.
 
-#### Model selection and model evaluation
-q- how do we choose the relevant validation technique?
-
-Validation data set approach
-- split 50/50
-- used to large sample size
-
-Leave-one-out cross validation
-- split data set with N obs into two part a traing set with n-1
-- Popular - challenge to use with larger sample size (very time consumeming)
-
-K-fold cross validation
-- random split k with approx n/k samples in each group
-- repeated and time series data measures could be used here
-
-Nested cross-validation
-- loop step-wise cross validation of training datasets
+-   when you get you data set try both ridge and lasso to see what works best
+-   Predicting and interference

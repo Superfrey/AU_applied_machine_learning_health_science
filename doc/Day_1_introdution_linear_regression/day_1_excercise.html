@@ -112,12 +112,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="excercise-day-1">Excercise Day 1</h2>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<p><strong>Check point 1: Supervised learning example</strong></p>
+</section>
+</section>
+<section id="check-point-1-supervised-learning-example" class="level2">
+<h2 class="anchored" data-anchor-id="check-point-1-supervised-learning-example">Check point 1: Supervised learning example</h2>
 <p><em>Example 1</em> Research questions: Could we predict HbA1c given various measurement of cholesterol, bmi, age, blood pressure, and sex.</p>
 <p>Method: Linear regression</p>
 <p>Data set: tabular data set with age, sex, body measures and biochemical measures.</p>
 <p><em>Example 2</em></p>
-<p><strong>Check point 2:</strong></p>
+<p>##Check point 2:</p>
 <p>Find part from ECG nodes in ECG data to detect early high risk of CVD event. Mixed inference and prediction. As ECG have large variability, I believe to include many recordings (&gt; 1000).</p>
 <p>Methods: Deep learning neural network ?</p>
 <p>Data: Time to event data - ECG data for each individuals - Hospital records of CVD events</p>
@@ -147,27 +150,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MSE_error_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 7 rows containing missing values (`geom_point()`).
-Removed 7 rows containing missing values (`geom_point()`).
-Removed 7 rows containing missing values (`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="day_1_excercise_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MSE_poly,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MSE_poly,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  m     errTrain      errTest i   ratioError logerrTest logerrTrain
-1 1 9.783850e-05 3.363816e-04 1 3.438131e+00  -7.997264   -9.232192
-2 2 5.942656e-05 4.129855e-04 2 6.949511e+00  -7.792098   -9.730769
-3 3 5.884494e-05 4.641982e-04 3 7.888498e+00  -7.675199   -9.740605
-4 4 2.318943e-05 4.177533e-02 4 1.801481e+03  -3.175449  -10.671814
-5 5 1.818859e-07 7.715585e+00 5 4.241992e+07   2.043242  -15.519886
-6 6 1.605274e-07 4.971764e+00 6 3.097143e+07   1.603775  -15.644801
-7 7 5.927753e-14 1.756514e+04 7 2.963204e+17   9.773672  -30.456546</code></pre>
+<pre><code>  m     errTrain      errTest i    diffError logerrTest logerrTrain
+1 1 9.783850e-05 3.363816e-04 1 2.385431e-04  -7.997264   -9.232192
+2 2 5.942656e-05 4.129855e-04 2 3.535590e-04  -7.792098   -9.730769
+3 3 5.884494e-05 4.641982e-04 3 4.053533e-04  -7.675199   -9.740605
+4 4 2.318943e-05 4.177533e-02 4 4.175214e-02  -3.175449  -10.671814
+5 5 1.818859e-07 7.715585e+00 5 7.715585e+00   2.043242  -15.519886
+6 6 1.605274e-07 4.971764e+00 6 4.971764e+00   1.603775  -15.644801
+7 7 5.927753e-14 1.756514e+04 7 1.756514e+04   9.773672  -30.456546</code></pre>
 </div>
 </div>
-<p>Checkpoint 5: b Training- and test errors</p>
+</section>
+<section id="checkpoint-5-b-training--and-test-errors" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-5-b-training--and-test-errors">Checkpoint 5: b Training- and test errors</h2>
 <ol type="a">
 <li>Explain the difference between a training- and a test data. Also explain the difference between training- and test error.</li>
 </ol>
@@ -176,10 +176,13 @@ Removed 7 rows containing missing values (`geom_point()`).</code></pre>
 <li>Argue why we typically are interested in good model performance in terms of low test error rather than in terms of low training error.</li>
 </ol>
 <p>We like to prioritize low error test results because the fitted model true evaluation depends how it fit with the validation points from test data set.</p>
-<p>Checkpoint 6: b Do section 2.4 conceptual exercise 3. in ISL (ISL page 53).</p>
+</section>
+<section id="checkpoint-6-b-do-section-2.4-conceptual-exercise-3.-in-isl-isl-page-53." class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-6-b-do-section-2.4-conceptual-exercise-3.-in-isl-isl-page-53.">Checkpoint 6: b Do section 2.4 conceptual exercise 3. in ISL (ISL page 53).</h2>
 <ol start="3" type="1">
 <li>We now revisit the bias-variance decomposition.</li>
 </ol>
+<!-- -->
 <ol type="a">
 <li>Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.</li>
 </ol>
@@ -188,11 +191,178 @@ Removed 7 rows containing missing values (`geom_point()`).</code></pre>
 <p><img src="day_1_excercise_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<ol start="2" type="a">
-<li>Explain why each of the five curves has the shape displayed in part (a).</li>
-</ol>
-<p>As training error decreases, over fitting is introduced and causes increase in test error.</p>
+<p><strong>(b) Explain why each of the five curves has the shape displayed in part (a).</strong></p>
+<p>As training error decreases because of better fitting, howvere over fitting is introduced and causes increase in test error. Bias decrease in training data with high complexity. However, the trade off is that variance in the test are increasing. So we want to chose the flexibility point were bias and variance in combination are lowest.</p>
 </section>
+<section id="checkpoint-7" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-7">Checkpoint 7:</h2>
+<p>Explain, in your own words, what a training set is, a validation set is, and a test set is? Why is this partition of data needed? Explain how k-fold cross validation is implemented. Explain how leave-one-out (LOO) cross validation is implemented. What are the advantages and disadvantages of k-fold cross validation relative to the validation set approach and the LOO cross validation approach?</p>
+<p>Training set is data that is used for traing the prediction model, where validation is used for evaluated how well the model predicts the outcoem in interest.</p>
+</section>
+<section id="checkpoint-8" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-8">Checkpoint 8:</h2>
+<p>R users: By using the functions createDataPartition and createFolds we can create random partitions of data.</p>
+<p>• Look at the help text for these functions and use a bit of time to familiarize yourself with the functions.</p>
+<ol type="a">
+<li>Run the command c = createDataPartition(y = 1:20, p = 0.8) and explain what the function does. Also describe the content of the variable c.</li>
+</ol>
+<p><strong>It creates a list of numbers (series) of partition from 1 - 20</strong></p>
+<ol start="2" type="a">
+<li><p>Run the command c = createFolds(y = 1:20, k = 10, returnTrain = TRUE) and explain what the function does. Also explain the content of the variable c.</p>
+<p>CreateFold split up the data in k groups. Here c are devided into 10 k-folds with 20 vector outcomes.</p></li>
+<li><p>Explain why it is generally recommended to run e.g.&nbsp;the command set.seed(0) before creating the random partitions.</p>
+<p>To set up the seed before deviding the dataset, hence obtain reproduceability.</p></li>
+</ol>
+<p>Linear regression - body density data - cross validation In this checkpoint you will analyse the body density data using linear regression (with polynomial regressors), and the goal is to build a linear regression model to predict body density from chest circumference measurements. You will use k-fold cross validation to evaluate model performance for different polynomial order.</p>
+<p>• Open the script main1b.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself. Use the script main1b.m / main1b.R and your code to answer the following:</p>
+<ol type="a">
+<li><p>Load the data set bodyMeasurementsSingleCV.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
+<p>252 obs and 2 features</p></li>
+<li><p>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross validation?</p>
+<p>10 k-folds</p></li>
+<li><p>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</p>
+<p>The fist part of the loop is slitting the training data and this will be done K times (10 in this case). Each data set will be included another loop with conducting training a linear model with flexibility of order m (7 in this case). Each model will tested on each test data set and errors estimates from train and test evaluation will be extrated.</p></li>
+<li><p>Run the script. Look at the plot of training and test error (cross-validation error) (ordinate) vs.&nbsp;polynomial order (abscissa) (both error curves in same plot). Include the plot in your report and describe/discuss it. Are the curves as expected? do you observe severe overfitting (compare with your result from Checkpoint 4)? if not, try to explain why not (Hint: look at the number of training observations and model flexibility). For which polynomial order do you observe the lowest test error?</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="day_1_excercise_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The overfitting seem first to be introduced after 5 orders in polynomial. However, we do not observe the same severity as the earlier models.</p>
+<p>Again the best model would be using 2 orders in polynomial as this has the lowest value in MSEtest.</p>
+</section>
+<section id="excercise-day-2" class="level2">
+<h2 class="anchored" data-anchor-id="excercise-day-2">Excercise Day 2</h2>
+</section>
+<section id="checkpoint-10-the-logistic-regression-model-suppose-that-your-input-data-xi-has-a-single-predictor-xi1-and-suppose-that-the-logistic-regression-model-has-parameters-β0-1-and-β1-1." class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-10-the-logistic-regression-model-suppose-that-your-input-data-xi-has-a-single-predictor-xi1-and-suppose-that-the-logistic-regression-model-has-parameters-β0-1-and-β1-1.">Checkpoint 10: The logistic regression model Suppose that your input data xi has a single predictor xi1, and suppose that the logistic regression model has parameters β0 = 1 and β1 = 1.</h2>
+<ol type="a">
+<li>Make a drawing/plot with curves of i) the posterior probability of class 0 P (y = 0|xi) as a function of xi1 and ii) the posterior probability of class 1 P (y = 1|xi) as a function of xi1, with xi1 ranging from -6 to 6. Remember to label each of the curves, to label axes in your drawing, and also remember to put tick labeling (numeric) on the axes.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="day_1_excercise_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Explain how you can classify a given input xi by using the posterior probabilities, and indicate the decision boundary/threshold on your drawing/plot above.</li>
+</ol>
+<p>Based on xi will the classification be 0 from -6 - 1 because the have the highest probability wihch is &gt; 0.5. Afterwards, beyond xi &gt; 1 the probability for y=1 is &gt;0.5, and hence will classify to category 1.</p>
+<ol start="3" type="a">
+<li>Make another drawing/plot with the log-odds ratio as a function of xi1.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="day_1_excercise_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Explain how you can classify a given input xi by using the log-odds ratio, and indicate the decision boundary/threshold on your drawing/plot above.</li>
+</ol>
+<p>When OR are &gt;1, the probability for being in class 1 is higher than the probability for being in class 0. Like the first plot the threshold can be found at xi = 1.</p>
+<ol start="5" type="a">
+<li>Suppose that we have three test samples</li>
+</ol>
+<p>For each of these three samples, compute P (y = 1|xi) and compute the predicted the class label.</p>
+<pre><code>![](here("docs/pics/Screenshot%202023-01-11%20at%2008.30.51.png")</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>log_funk <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>post_prob_1 <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span>x)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>post_prob_0 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>post_prob_1</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Y_Ix <span class="ot">&lt;-</span> post_prob_1<span class="sc">/</span>post_prob_0</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(Y_Ix)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p_v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> p_v) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  y_val <span class="ot">&lt;-</span> <span class="fu">log_funk</span>(i)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(y_val)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2689414
+[1] 0.7310586
+[1] 0.9525741</code></pre>
+</div>
+</div>
+</section>
+<section id="checkpoint-11-logistic-regression---csf-biomarker-data" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-11-logistic-regression---csf-biomarker-data">Checkpoint 11: Logistic regression - CSF biomarker data</h2>
+<p>In this checkpoint you will analyse the CSF biomarker data using logistic regression. The goal of the analysis is to build a logistic regression model to predict group membership (control/impaired) from a single CSF feature tau. • Open the script main2a.m / main2a.R and review it to understand the different steps in the script.</p>
+<ol type="a">
+<li>Run the first code section %% Import data etc.. What is the size of the data set? How many features and observations? Describe the response variable y, what type of variable is it and what is its content? How many subjects are there in each group?</li>
+</ol>
+<p>100 obs + 131 features</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt; table of extent 0 &gt;</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Explain how data is divided into a training set and a test set, and explain the meaning of stratification. Run the second code section %% Divide into training and test sets. Compute the class proportions in the training set and in the test set and report these, and verify that class proportions are preserved after the data partitioning.</li>
+</ol>
+<p>by using the code createDataPartition, and specify that Y should be account for the two outcomes, and define that 90% of dat goes to training.</p>
+<ol start="3" type="a">
+<li>Run the code section %% Train model, predict, and plot model. Describe the variable catInfo and its content. Describe the model outputs yhatTrainProb and yhatTestProb, what does these represent? Describe the variables yhatTrain and yhatTest, what do these represent? Include the plot of model output vs.&nbsp;input, describe the plot, and explain how classification can be performed based on this plot.</li>
+</ol>
+<p>Given the xi each observations probability form training data are displayed…. add more</p>
+<ol start="4" type="a">
+<li>In the third code section, the model predictions are converted to categorical data to be used as input to the confusionchart (Matlab) confusionMatrix (R) function for plotting the confusion matrix. Look at the help text for this function and use a bit of time to familiarize yourself with the function. Run the forth code section %% Plot confusion matrix, include the plot in your report, and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="5" type="a">
+<li>You will now do almost the same analysis, but you will now use 10-fold cross-validation for model evaluation. Open the script main2b.m / main2b.R and review it to understand the different steps in the script. Run the script. Include the plot of the confusion matrices for the trainingand test/validation data in you report and describe/discuss it. Also explain how the confusion matrices are computed across the cross-validation iterations. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
+</ol>
+</section>
+<section id="checkpoint-12-regularization" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-12-regularization">Checkpoint 12: Regularization</h2>
+<ol type="a">
+<li>Explain when and why it may be necessary to use model regularization.</li>
+</ol>
+<p>To constrain the flexibility of the model and decrease the MSE.</p>
+<ol start="2" type="a">
+<li><ol type="1">
+<li>Write down the penalized cost function for linear regression for each of the following penalty/shrinkage terms: (i) ridge (ℓ2), (ii) lasso (ℓ1).</li>
+</ol></li>
+</ol>
+<p>In ridge, the values shrinkage close to zeror and MSE decrease untli a certain value. In lasso, some coefficients shrink to zero and the most important features are left.</p>
+<ol start="2" type="1">
+<li>Explain meaning of the different elements of the expressions in (1).</li>
+</ol>
+<p>The residual sum of sqaure that, sum each obesevation true value minus their predicted value.</p>
+</section>
+<section id="checkpoint-13-b-regularization-training--and-test-errors-and-biasvariance-trade-off" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-13-b-regularization-training--and-test-errors-and-biasvariance-trade-off">Checkpoint 13: b Regularization, training- and test errors, and biasvariance trade-off</h2>
+<ol type="a">
+<li>Provide a sketch of how coefficient estimates typically change with the strength of the regularization parameter λ for the ridge and the lasso penalty, respectively. Describe/discuss the curves and their similarities/differences.</li>
+</ol>
+<p><em>Ridge /</em> <em>Lasso</em></p>
+<p><img src="desktop/r_directory/courses/AU_applied_machine_learning_health_science/doc/pics/Screenshot%202023-01-11%20at%2010.58.46.png" class="img-fluid" width="296"></p>
+<p><img src="images/Screenshot%202023-01-11%20at%2010.58.24.png" class="img-fluid" width="296"></p>
+<pre><code>In ridge, al coef are shrinkaging collectivly, where in lasso som coef shrink to 0 and som e increases in beta value.</code></pre>
+<ol type="a">
+<li><p>Provide a sketch of typical training error and test error on a single plot, as a function of the regularization parameter λ. λ should be on the x-axis, and the y-axis should represent the values for each curve. Make sure to label each one.</p></li>
+<li><p>Explain why each of the two curves has the shape displayed in (a).</p></li>
+<li><p>Explain how model complexity changes with λ, and discuss your answer in terms of the bias-variance trade-off.</p></li>
+<li><p>Explain how the suitable regularization strength is chosen in a real-world analysis.</p></li>
+</ol>
+<p>##Checkpoint 14: Ï) Linear regression - body density data - ridge regularization</p>
+<p>In this checkpoint you will analyse the body density data using linear regression, and the goal is to build a ridge regularized linear regression model to predict body density based on subjects’ age, height, weight, and 10 circumference measurements (13 input features in total). You will use k-fold cross-validation to evaluate model performance for different regularization strengths.</p>
+<p>• Open the script main3a.m / main3a.R and review it to understand the different steps in the script.</p>
+<p>Use the script and your code to answer the following: (a) Load the data set bodyMeasurements.txt. Describe the data, what is the size of the data set? how many observations and features? (b) Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation? (c) Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used? (d) The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script. (e) Identify the lines where data is being standardized in the script. Explain how standardization is done, and why it is generally recommended to standardize data when using shrinkage regularization. (f) The fitting function has a parameter alpha. Explain what this parameter is? (g) Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss it. (h) How would you choose the “best” model? For the selected model report the training and test error.</p>
+<ol type="i">
+<li>Look at the β coefficient array. What is the dimensionality of β?</li>
+</ol>
+<!-- -->
+<ol start="10" type="a">
+<li>Include the plot with coefficient traces as a function of λ in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero?</li>
+<li>Look at the coefficients for your chosen model. Identify the most important coefficients to the model.</li>
+</ol>
 </section>
 
 </main>

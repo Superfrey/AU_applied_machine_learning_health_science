@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>excercise_doc</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="excercise_doc_files/libs/clipboard/clipboard.min.js"></script>
+<script src="excercise_doc_files/libs/quarto-html/quarto.js"></script>
+<script src="excercise_doc_files/libs/quarto-html/popper.min.js"></script>
+<script src="excercise_doc_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="excercise_doc_files/libs/quarto-html/anchor.min.js"></script>
+<link href="excercise_doc_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="excercise_doc_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="excercise_doc_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="excercise_doc_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="excercise_doc_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="excercise-day-1" class="level2">
+<h2 class="anchored" data-anchor-id="excercise-day-1">Excercise Day 1</h2>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+</section>
+</section>
+<section id="check-point-1-supervised-learning-example" class="level2">
+<h2 class="anchored" data-anchor-id="check-point-1-supervised-learning-example">Check point 1: Supervised learning example</h2>
+<p><em>Example 1</em> Research questions: Could we predict HbA1c given various measurement of cholesterol, bmi, age, blood pressure, and sex.</p>
+<p>Method: Linear regression</p>
+<p>Data set: tabular data set with age, sex, body measures and biochemical measures.</p>
+<p><em>Example 2</em></p>
+<p>##Check point 2:</p>
+<p>Find part from ECG nodes in ECG data to detect early high risk of CVD event. Mixed inference and prediction. As ECG have large variability, I believe to include many recordings (&gt; 1000).</p>
+<p>Methods: Deep learning neural network ?</p>
+<p>Data: Time to event data - ECG data for each individuals - Hospital records of CVD events</p>
+</section>
+<section id="checkpoint-4-ï-linear-regression---body-density-data-in-this-checkpoint-you-will-analyse-the-body-density-data-using-linear-regression.-the-goal-is-to-build-a-linear-regression-model-to-predict-body-density-from-chest-circumference-measurements.-open-the-script-main1a.m-and-review-it-to-understand-the-different-steps-in-the-script.-some-of-the-code-needed-to-answer-this-checkpoint-is-already-provided-in-the-script-but-you-also-need-to-do-a-bit-of-coding-yourself." class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-4-ï-linear-regression---body-density-data-in-this-checkpoint-you-will-analyse-the-body-density-data-using-linear-regression.-the-goal-is-to-build-a-linear-regression-model-to-predict-body-density-from-chest-circumference-measurements.-open-the-script-main1a.m-and-review-it-to-understand-the-different-steps-in-the-script.-some-of-the-code-needed-to-answer-this-checkpoint-is-already-provided-in-the-script-but-you-also-need-to-do-a-bit-of-coding-yourself.">Checkpoint 4: Ï) Linear regression - body density data In this checkpoint you will analyse the body density data using linear regression. The goal is to build a linear regression model to predict body density from chest circumference measurements. • Open the script main1a.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself.</h2>
+<p>Use the script main1a.m / main1a.R and your code to answer the following:</p>
+<ol type="a">
+<li><p>Load the data set bodyMeasurementsSingleTrainTest.txt. Describe the data, what are the sizes of the training- and test sets? how many observations and features? what is the numerical range of the variables?</p>
+<p><em>test = 244 obs with 2 variables train = 8 obs with 2 variables</em></p></li>
+<li><p>Identify the part for of the script that is used for creating the polynomial expansion of the input variable. Try do create polynomial expansions with different polynomial order from 1 to 7, how many columns/features are there in the resulting data matrices?</p>
+<p><em>n+1 for each polynomial increase (1 polynum = 1 features and 2 polynum = 2 features)</em></p></li>
+<li><p>Part of the code is scaling the individual columns of the polynomial regressors. Explain how this scaling is done and why the scaling may be necessary (Hint: what is the numerical range of the individual columns?).</p></li>
+<li><p>Type doc fitglm in Matlab or ?glm in R and use a bit of time to familiarize yourself with this function. What are the inputs to the function and what is the output?</p></li>
+</ol>
+<p><em>GLM is generalised linear model, and can be used for a variety of regression based defined familiy. The gaussian is used for linear regression with option for polynomial flexibility. The inputs are continuous and the output is a predicted continuous response.</em></p>
+<ol start="5" type="a">
+<li><p>Explain how training error and test error are quantified in the script?</p>
+<p><em>Training error is the mean of the squared difference between errors, and is based on the difference between observed value from the training data and predicted value from the training data set.</em></p>
+<p><em>Test error is the mean of the squared difference between errors, and is based on the difference between observed value from the test data set and predicted value from the training dataset.</em></p></li>
+<li><p>Run the analysis with polynomial order ranging from 1 to 7 (Hint: include a for-loop in the script). For each of these seven models, make a plot of body density (ordinate) vs.&nbsp;chest circumference (abscissa) for the training- and test data as well as the model’s predictions (all three in the same plot). Include the plots in your report and describe/discuss the plots.</p></li>
+</ol>
+<p>##ADDPLOT!!!</p>
+<ol start="7" type="a">
+<li>Write your own code to make a plot of training error and test error vs.&nbsp;polynomial order (order 1 to 7). Include the plot in your report and describe/discuss the plot. Do you observe severe overfitting for some polynomial orders?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MSE_error_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MSE_poly,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  m     errTrain      errTest i    diffError logerrTest logerrTrain
+1 1 9.783850e-05 3.363816e-04 1 2.385431e-04  -7.997264   -9.232192
+2 2 5.942656e-05 4.129855e-04 2 3.535590e-04  -7.792098   -9.730769
+3 3 5.884494e-05 4.641982e-04 3 4.053533e-04  -7.675199   -9.740605
+4 4 2.318943e-05 4.177533e-02 4 4.175214e-02  -3.175449  -10.671814
+5 5 1.818859e-07 7.715585e+00 5 7.715585e+00   2.043242  -15.519886
+6 6 1.605274e-07 4.971764e+00 6 4.971764e+00   1.603775  -15.644801
+7 7 5.927753e-14 1.756514e+04 7 1.756514e+04   9.773672  -30.456546</code></pre>
+</div>
+</div>
+</section>
+<section id="checkpoint-5-b-training--and-test-errors" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-5-b-training--and-test-errors">Checkpoint 5: b Training- and test errors</h2>
+<ol type="a">
+<li><p>Explain the difference between a training- and a test data. Also explain the difference between training- and test error.</p>
+<p>The training data is used for training the models for predicting a certain outcome. The test data is used to test the trained model, to evaluate how well the trained model are predicting. The tools for evaluate the models performance is based on training and testing error. The training error are the error from the devolped model on the trained data point, where it is the same for testing, just focusing on the testing data points.</p></li>
+<li><p>Argue why we typically are interested in good model performance in terms of low test error rather than in terms of low training error.</p>
+<p>We like to prioritize low error test results because the fitted model true evaluation depends how it fit with the validation points from test data set.</p></li>
+</ol>
+</section>
+<section id="checkpoint-6-b-do-section-2.4-conceptual-exercise-3.-in-isl-isl-page-53." class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-6-b-do-section-2.4-conceptual-exercise-3.-in-isl-isl-page-53.">Checkpoint 6: b Do section 2.4 conceptual exercise 3. in ISL (ISL page 53).</h2>
+<ol start="3" type="1">
+<li>We now revisit the bias-variance decomposition.</li>
+</ol>
+<ol type="a">
+<li>Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>(b) Explain why each of the five curves has the shape displayed in part (a).</strong></p>
+<pre><code>As training error decreases because of better fitting, however overfitting is introduced and causes increase in test error. Bias decrease in training data with the high complexity. However, the trade off is that variance are increasing. So we want to chose the flexibility point were bias and variance in combination are lowest.</code></pre>
+</section>
+<section id="checkpoint-7" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-7">Checkpoint 7:</h2>
+<p>Explain, in your own words, what a training set is, a validation set is, and a test set is? Why is this partition of data needed? Explain how k-fold cross validation is implemented. Explain how leave-one-out (LOO) cross validation is implemented. What are the advantages and disadvantages of k-fold cross validation relative to the validation set approach and the LOO cross validation approach?</p>
+<pre><code>Training set is data that is used for training the prediction model, where validation is used for evaluated how well the model predicts the outcome in interest.</code></pre>
+</section>
+<section id="checkpoint-8" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-8">Checkpoint 8:</h2>
+<p>R users: By using the functions createDataPartition and createFolds we can create random partitions of data.</p>
+<p>• Look at the help text for these functions and use a bit of time to familiarize yourself with the functions.</p>
+<ol type="a">
+<li><p>Run the command c = createDataPartition(y = 1:20, p = 0.8) and explain what the function does. Also describe the content of the variable c.</p>
+<p>It creates a list of numbers (series) of partition from 1 - 20</p></li>
+<li><p>Run the command c = createFolds(y = 1:20, k = 10, returnTrain = TRUE) and explain what the function does. Also explain the content of the variable c.</p>
+<p>CreateFold split up the data in k groups. Here c are devided into 10 k-folds with 20 vector outcomes.</p></li>
+<li><p>Explain why it is generally recommended to run e.g.&nbsp;the command set.seed(0) before creating the random partitions.</p>
+<p>To set up the seed before deviding the dataset and doing the analysis, hence obtain reproduceability.</p></li>
+</ol>
+</section>
+<section id="check-point-9" class="level2">
+<h2 class="anchored" data-anchor-id="check-point-9">Check point 9</h2>
+<p>Linear regression - body density data - cross validation In this checkpoint you will analyse the body density data using linear regression (with polynomial regressors), and the goal is to build a linear regression model to predict body density from chest circumference measurements. You will use k-fold cross validation to evaluate model performance for different polynomial order.</p>
+<p>• Open the script main1b.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself. Use the script main1b.m / main1b.R and your code to answer the following:</p>
+<ol type="a">
+<li><p>Load the data set bodyMeasurementsSingleCV.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
+<p>252 obs and 2 features</p></li>
+<li><p>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross validation?</p>
+<p>10 k-folds</p></li>
+<li><p>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</p>
+<p>The fist part of the loop is slitting the training data and this will be done K times (10 in this case). Each data set will be included another loop with conducting training a linear model with flexibility of order m ( up till 7 in this case). Each model will tested on each test data set and errors estimates from train and test evaluation will be extrated.</p></li>
+<li><p>Run the script. Look at the plot of training and test error (cross-validation error) (ordinate) vs.&nbsp;polynomial order (abscissa) (both error curves in same plot). Include the plot in your report and describe/discuss it. Are the curves as expected? do you observe severe overfitting (compare with your result from Checkpoint 4)? if not, try to explain why not (Hint: look at the number of training observations and model flexibility). For which polynomial order do you observe the lowest test error?</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>We do not observe the same severity as the earlier models. The overfitting seem first to be slightly introduced after 5 orders in polynomial. Again the best model would be using 2 orders in polynomial as this has the lowest value in MSEtest. The improvement of the model is expected as we are using more data for training dataset and we are including cross-validation.</code></pre>
+</section>
+<section id="excercise-day-2" class="level1">
+<h1>Excercise Day 2</h1>
+</section>
+<section id="logistic-regression" class="level1">
+<h1>Logistic Regression</h1>
+<section id="checkpoint-10-the-logistic-regression-model-suppose-that-your-input-data-xi-has-a-single-predictor-xi1-and-suppose-that-the-logistic-regression-model-has-parameters-β0-1-and-β1-1." class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-10-the-logistic-regression-model-suppose-that-your-input-data-xi-has-a-single-predictor-xi1-and-suppose-that-the-logistic-regression-model-has-parameters-β0-1-and-β1-1.">Checkpoint 10: The logistic regression model Suppose that your input data xi has a single predictor xi1, and suppose that the logistic regression model has parameters β0 = 1 and β1 = 1.</h2>
+<ol type="a">
+<li>Make a drawing/plot with curves of i) the posterior probability of class 0 P (y = 0|xi) as a function of xi1 and ii) the posterior probability of class 1 P (y = 1|xi) as a function of xi1, with xi1 ranging from -6 to 6. Remember to label each of the curves, to label axes in your drawing, and also remember to put tick labeling (numeric) on the axes.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Explain how you can classify a given input xi by using the posterior probabilities, and indicate the decision boundary/threshold on your drawing/plot above.</li>
+</ol>
+<p><em>Based on xi will the classification be 0 from -6 to 1 because the have the highest probability wihch is &gt; 0.5. Afterwards, beyond xi &gt; 1 the probability for y=1 is &gt;0.5, and hence will classify to category 1.</em></p>
+<ol start="3" type="a">
+<li>Make another drawing/plot with the log-odds ratio as a function of xi1.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Explain how you can classify a given input xi by using the log-odds ratio, and indicate the decision boundary/threshold on your drawing/plot above.</li>
+</ol>
+<p><em>When OR are &gt;1, the probability for being in class 1 is higher than the probability for being in class 0. Like the first plot the threshold can be found at xi = 1.</em></p>
+<ol start="5" type="a">
+<li>Suppose that we have three test samples For each of these three samples, compute P (y = 1|xi) and compute the predicted the class label.</li>
+</ol>
+<p>[Three samples]here::here(“doc/pics/Screenshot%202023-01-11%20at%2008.30.51.png”))</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>log_funk <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>post_prob_1 <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span>x)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>post_prob_0 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span>post_prob_1</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Y_Ix <span class="ot">&lt;-</span> post_prob_1<span class="sc">/</span>post_prob_0</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(Y_Ix)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p_v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> p_v) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  y_val <span class="ot">&lt;-</span> <span class="fu">log_funk</span>(i)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(y_val)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2689414
+[1] 0.7310586
+[1] 0.9525741</code></pre>
+</div>
+</div>
+</section>
+<section id="checkpoint-11-logistic-regression---csf-biomarker-data" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-11-logistic-regression---csf-biomarker-data">Checkpoint 11: Logistic regression - CSF biomarker data</h2>
+<p>In this checkpoint you will analyse the CSF biomarker data using logistic regression. The goal of the analysis is to build a logistic regression model to predict group membership (control/impaired) from a single CSF feature tau. • Open the script main2a.m / main2a.R and review it to understand the different steps in the script.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"R/day_2_code/main2a.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li><p>Run the first code section %% Import data etc.. What is the size of the data set? How many features and observations? Describe the response variable y, what type of variable is it and what is its content? How many subjects are there in each group?</p>
+<p>100 obs and 131 features</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Control Impaired 
+      72       28 </code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Explain how data is divided into a training set and a test set, and explain the meaning of stratification. Run the second code section %% Divide into training and test sets. Compute the class proportions in the training set and in the test set and report these, and verify that class proportions are preserved after the data partitioning.</p>
+<p>By using the code createDataPartition, and specify that Y should be account for the two outcomes, and define that 90% of data goes to training.</p></li>
+<li><p>Run the code section %% Train model, predict, and plot model. Describe the variable catInfo and its content. Describe the model outputs yhatTrainProb and yhatTestProb, what does these represent? Describe the variables yhatTrain and yhatTest, what do these represent? Include the plot of model output vs.&nbsp;input, describe the plot, and explain how classification can be performed based on this plot.</p></li>
+</ol>
+<p><em>catInfo is the variable including the labels of the group response (impaired/control). yhatTrainProb is the predicted groups in training data set based on the trained model, and yhatTestProb is the predicted groups in the testing data set based on the trained model (validation of the model). yhatTrain, yhatTest </em></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>Given the xi each observations probability from training data are displayed add more</code></pre>
+<ol start="4" type="a">
+<li>In the third code section, the model predictions are converted to categorical data to be used as input to the confusionchart (Matlab) confusionMatrix (R) function for plotting the confusion matrix. Look at the help text for this function and use a bit of time to familiarize yourself with the function. Run the forth code section %% Plot confusion matrix, include the plot in your report, and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="5" type="a">
+<li>You will now do almost the same analysis, but you will now use 10-fold cross-validation for model evaluation. Open the script main2b.m / main2b.R and review it to understand the different steps in the script. Run the script. Include the plot of the confusion matrices for the trainingand test/validation data in you report and describe/discuss it. Also explain how the confusion matrices are computed across the cross-validation iterations. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
+</ol>
+</section>
+<section id="checkpoint-12-regularization" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-12-regularization">Checkpoint 12: Regularization</h2>
+<ol type="a">
+<li><p>Explain when and why it may be necessary to use model regularization.</p>
+<p>To constrain the flexibility/complexity of the model and decrease the MSE, .</p></li>
+<li><ol type="1">
+<li>Write down the penalized cost function for linear regression for each of the following penalty/shrinkage terms: (i) ridge (ℓ2), (ii) lasso (ℓ1).</li>
+</ol></li>
+</ol>
+<p><em>In ridge, the values shrinkage close to zero and MSE decrease until a certain value. In lasso, some coefficients shrink to zero and the most important features are left.</em></p>
+<ol start="2" type="1">
+<li>Explain meaning of the different elements of the expressions in (1).</li>
+</ol>
+<p><em>The residual sum of sqaure that, sum each obesevation true value minus their predicted value.</em></p>
+</section>
+<section id="checkpoint-13-b-regularization-training--and-test-errors-and-biasvariance-trade-off" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-13-b-regularization-training--and-test-errors-and-biasvariance-trade-off">Checkpoint 13: b Regularization, training- and test errors, and biasvariance trade-off</h2>
+<ol type="a">
+<li>Provide a sketch of how coefficient estimates typically change with the strength of the regularization parameter λ for the ridge and the lasso penalty, respectively. Describe/discuss the curves and their similarities/differences.</li>
+</ol>
+<p><em>Ridge /</em> <em>Lasso</em></p>
+<p><img src="Screenshot%202023-01-11%20at%2010.58.46.png" class="img-fluid" width="296"></p>
+<p><img src="desktop/r_directory/courses/AU_applied_machine_learning_health_science/doc/pics/Screenshot%202023-01-11%20at%2010.58.24.png" class="img-fluid" width="296"></p>
+<pre><code>In ridge, all coefficients are shrinkaging collectively, where in lasso som coef shrink to 0 and som e increases in beta value.</code></pre>
+<ol type="a">
+<li>Provide a sketch of typical training error and test error on a single plot, as a function of the regularization parameter λ. λ should be on the x-axis, and the y-axis should represent the values for each curve. Make sure to label each one.</li>
+</ol>
+<p>Ridge /lasso <img src="desktop/r_directory/courses/AU_applied_machine_learning_health_science/doc/pics/Screenshot%202023-01-11%20at%2011.06.44.png" class="img-fluid"></p>
+<ol start="2" type="a">
+<li>Explain why each of the two curves has the shape displayed in (a).</li>
+</ol>
+<p><em>Squaredbias (black), variance(green,), test error(purple). Between the variance and bias there occurs a sweet optimal spot for MSE, where MSE is lowest. Afterward, the bias increases and the variance decreases.</em></p>
+<ol start="3" type="a">
+<li>Explain how model complexity changes with λ, and discuss your answer in terms of the bias-variance trade-off.</li>
+</ol>
+<p><em>see above discription</em></p>
+<ol start="4" type="a">
+<li>Explain how the suitable regularization strength is chosen in a real-world analysis.</li>
+</ol>
+<p><em>By using cross-validation, and observe the </em></p>
+<p>##Checkpoint 14: Ï) Linear regression - body density data - ridge regularization</p>
+<p>In this checkpoint you will analyse the body density data using linear regression, and the goal is to build a ridge regularized linear regression model to predict body density based on subjects’ age, height, weight, and 10 circumference measurements (13 input features in total). You will use k-fold cross-validation to evaluate model performance for different regularization strengths.</p>
+<p>• Open the script main3a.m / main3a.R and review it to understand the different steps in the script.</p>
+<p>Use the script and your code to answer the following: (a) Load the data set bodyMeasurements.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
+<p>252 obs with 14 features</p>
+<ol start="2" type="a">
+<li>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation?</li>
+</ol>
+<p><em>Using createKolfold where there are used 10 k-folds</em></p>
+<ol start="3" type="a">
+<li>Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used?</li>
+</ol>
+<p><em>lambda = 2^seq(5, -15, by = -0.5) spanning form 5 to -15 by each -0.5</em></p>
+<ol start="4" type="a">
+<li>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</li>
+</ol>
+<p><em>In the first loop, we are defining the trianing and the testing data set by each k-folds, then a fitted model with diffenent lambda values are established using the training set, by the function glm family gaussian. Then the predicted value for training and testing data set are done. In the second loop, we defin matricises with MSE (as ridge principals), by the different lambda values.</em></p>
+<ol start="5" type="a">
+<li>Identify the lines where data is being standardized in the script. Explain how standardization is done, and why it is generally recommended to standardize data when using shrinkage regularization.</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<ol start="6" type="a">
+<li>The fitting function has a parameter alpha. Explain what this parameter is?</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<ol start="7" type="a">
+<li>Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss it.</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<ol start="8" type="a">
+<li>How would you choose the “best” model? For the selected model report the training and test error.</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<ol type="i">
+<li>Look at the β coefficient array. What is the dimensionality of β?</li>
+</ol>
+<!-- -->
+<ol start="10" type="a">
+<li>Include the plot with coefficient traces as a function of λ in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero?</li>
+<li>Look at the coefficients for your chosen model. Identify the most important coefficients to the model.</li>
+</ol>
+</section>
+<section id="checkpoint-15-ïlogistic-regression---csf-biomarker-data---lasso-regularization" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-15-ïlogistic-regression---csf-biomarker-data---lasso-regularization">Checkpoint 15: ÏLogistic regression - CSF biomarker data - lasso regularization</h2>
+<p>In this checkpoint you will analyse the CSF biomarker data using logistic regression with lasso regularization. The goal of the analysis is to build a logistic regression model to predict group membership (control/impaired) based on 130 CSF features.</p>
+<p>• Open the script main3b.m / main3b.R and review it to understand the different steps in the script.</p>
+<p>Use the script to answer the following: (a) Load the data set csfBiomarkers.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
+<ol start="2" type="a">
+<li><p>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation?</p></li>
+<li><p>Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used?</p></li>
+<li><p>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</p></li>
+<li><p>Describe meaning of the fitting function’s parameter alpha.</p></li>
+<li><p>Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss it.</p></li>
+<li><p>How would you choose the “best” model? For the selected model report the training and test error.</p></li>
+<li><p>Look at the β coefficient array. What is the dimensionality of β?</p></li>
+<li><p>Include the plot with coefficient traces as a function of λ in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero?</p></li>
+<li><p>Look at the coefficients for your chosen model. Identify the most important coefficients to the model.</p></li>
+<li><p>Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy,error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</p></li>
+</ol>
+</section>
+</section>
+<section id="support-vector-machines" class="level1">
+<h1>7 Support vector machines</h1>
+<section id="checkpoint-16-bmaximal-margin-classifier" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-16-bmaximal-margin-classifier">Checkpoint 16: bmaximal margin classifier</h2>
+<ol type="a">
+<li>Do section 9.7 conceptual exercise 3. in ISL (ISL page 399).</li>
+</ol>
+<ol start="3" type="1">
+<li>Here we explore the maximal margin classifier on a toy data set. 9.7 Exercises 399</li>
+</ol>
+<ol type="a">
+<li>We are given n = 7 observations in p = 2 dimensions. For each observation, there is an associated class label. Obs. X1 X2 Y 1 3 4 Red 2 2 2 Red 3 4 4 Red 4 1 4 Red 5 2 1 Blue 6 4 3 Blue 7 4 1 Blue Sketch the observations.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hyper <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x2_kor  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>x1<span class="dv">-3</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x1_kor  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>x2<span class="dv">-2</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    kor <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x1_kor,x2_kor)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(kor)}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hyper</span>(<span class="dv">3</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     x1_kor x2_kor
+[1,]      2      4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x1 =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x2 =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"red"</span>,<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"blue"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Sketch the optimal separating hyperplane, and provide the equation for this hyperplane (of the form (9.1)).</p></li>
+<li><p>Describe the classification rule for the maximal margin classifier. It should be something along the lines of “Classify to Red if β0 +β1X1 +β2X2 &gt; 0, and classify to Blue otherwise.” Provide the values for β0, β1, and β2.</p></li>
+</ol>
+<p>The maximize the suporting vector on both sides of the hyperplane to the nearst point. This, will be defined as the maximized margin on both sides, &gt;0 and &gt;0 , respectively.</p>
+<ol start="4" type="a">
+<li><p>On your sketch, indicate the margin for the maximal margin hyperplane.</p></li>
+<li><p>Indicate the support vectors for the maximal margin classifier.</p></li>
+<li><p>Argue that a slight movement of the seventh observation would not affect the maximal margin hyperplane.</p></li>
+</ol>
+<p>Because the 7th measurement is outside the suporting vector and, thus are not included in the maximal margins</p>
+<ol start="7" type="a">
+<li><p>Sketch a hyperplane that is not the optimal separating hyperplane, and provide the equation for this hyperplane.</p></li>
+<li><p>Draw an additional observation on the plot so that the two classes are no longer separable by a hyperplane.</p></li>
+</ol>
+</section>
+<section id="checkpoint-17-support-vector-classifier-aka.-soft-margin-svm" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-17-support-vector-classifier-aka.-soft-margin-svm">Checkpoint 17: Support vector classifier (aka. soft margin SVM)</h2>
+<ol type="a">
+<li><p>Discuss the difference between the maximal margin classifier (hard margin SVM) and the support vector classifier (soft margin SVM).</p>
+<p>We define the margin, and find which hyperplane where margin is maximized. In hard margin we want to maximise the parrallel lines of the hyperplane (margin) to the nearest support vectors points on both sides of the hyperplane. In soft margin the support vectors are allowed constrains, and extend the margins, and increase the robustness of the model.</p></li>
+<li><p>Describe why it may be necessary or beneficial to use the soft margin SVM instead of a hard margin SVM.</p>
+<p>to make a more flexible and</p></li>
+<li><p>What are slack variables ϵ?</p>
+<p>The distantance to the corisponding canonical hyperplane. How much salack variables with allow to individaul points.</p></li>
+<li><p>Discuss the meaning of the regularization parameter C.</p>
+<p>C is to control how much we want to extend our margin variation in canonical hyperplane. When we increase C we tend to include more supporting vectors.</p></li>
+<li><p>On your sketch from the previous checkpoint, draw an example of a soft margin.</p></li>
+<li><p>Mark data points with positive slack variables ϵ.</p></li>
+<li><p>Sketch what happens to the canonical hyperplanes with increases in C and decreases in C, and discuss how this is related to the bias-variance trade-off.</p></li>
+</ol>
+<p>With too increased C our canonical hyperplanes includes large distance to each observation and will include more misclassified observation. With the right amount increase in C will create a more robust model the could increse the performance of the model in the testing data.</p>
+</section>
+<section id="checkpoint-18-regularization" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-18-regularization">Checkpoint 18: Regularization</h2>
+<ol type="a">
+<li><p>Provide a sketch of typical training error and test error on a single plot, as a function of the regularization parameter C. C should be on the x-axis, and the y-axis should represent the values for each curve.</p></li>
+<li><p>Explain why each of the two curves has the shape displayed in (a) (Hint: see g in the previous checkpoint).</p></li>
+</ol>
+<p>With the right amount increase in C will create a more robust model the could increase the performance of the model in the testing data. But with too high C, too much error rate are introduced and more misclassification occur.</p>
+<ol start="3" type="a">
+<li>Explain how a suitable amount of regularization is chosen in a real-world application.</li>
+</ol>
+<p>Where C has decreased the error rate in testing dataset and are not too increased in the training dataset.</p>
+</section>
+<section id="checkpoint-19-support-vector-machine-aka.-kernel-svm-or-non-linear-svm" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-19-support-vector-machine-aka.-kernel-svm-or-non-linear-svm">Checkpoint 19: Support vector machine (aka. kernel SVM or non-linear SVM)</h2>
+<ol type="a">
+<li><p>Describe a scenario where use of a non-linear SVM may lead to better performance relative to a linear classifier.</p></li>
+<li><p>What is a kernel function?</p></li>
+</ol>
+<p>How much we want to expand our feature space. We can when make non-linear decision boundaries.</p>
+<ol start="3" type="a">
+<li>Describe what an evaluation of the kernel function corresponds to.</li>
+</ol>
+</section>
+<section id="checkpoint-20-ïsupport-vector-machine---csf-biomarker-data" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-20-ïsupport-vector-machine---csf-biomarker-data">Checkpoint 20: ÏSupport vector machine - CSF biomarker data</h2>
+<p>In this checkpoint you will analyse the CSF biomarker data using a support vector classifier (soft-margin SVM). The goal of the analysis is to build a support vector machine to predict group membership (control/impaired) based on 130 CSF features. • Open the script main4a.m / main4a.R and review it to understand the different steps in the script. Use the script to answer the following:</p>
+<ol type="a">
+<li><p>Load the data set csfBiomarkers.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
+<p>131 observation and 131 features</p></li>
+<li><p>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation?</p>
+<p>10 K-folds</p></li>
+<li><p>Identify the part of the script where the range of the regularization parameter C is defined. Which sequence of C-values is used?</p>
+<p>Cvalues = 2^seq(15, 0, by = -0.5)</p></li>
+<li><p>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</p>
+<p>The first loop includes making the traing and the testing data set by 10 K-fold. The second loop includes the supporting vector machine function to train the model based on the traning data set and different sequnece of C-values. Afterwards the trained model are evaluated the classifier performance and error rate both on the training data and the testing data.</p></li>
+<li><p>The function fitcsvm (Matlab) svm (R) is here used to fit the SVM. Describe the input parameter C.</p>
+<p>C defines the contraining limits for flexibility of the model epsilon distance. In the svm function we are looping with the sequence of different constraining values.</p></li>
+<li><p>Run the analysis. Plot the training error and the test error as a function of the regularization parameter C. Include the plot in your report and describe/discuss it. Also discuss the curves in terms of the bias-variance trade-off. How would you choose the “best” model? For the selected model report the training and test error.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"R/day_2_code/main4a.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "cross-validation iteration 1 of 10"
+[1] "cross-validation iteration 2 of 10"
+[1] "cross-validation iteration 3 of 10"
+[1] "cross-validation iteration 4 of 10"
+[1] "cross-validation iteration 5 of 10"
+[1] "cross-validation iteration 6 of 10"
+[1] "cross-validation iteration 7 of 10"
+[1] "cross-validation iteration 8 of 10"
+[1] "cross-validation iteration 9 of 10"
+[1] "cross-validation iteration 10 of 10"
+[1] "best C: log2(C)=6.500"
+training error: 0.061087788616validation error: 0.120202020202
+
+rank                                feature beta_med        beta_mean
+1                                  VEGF 0.1352211609117568  0.1360782514540126
+2                                   tau 0.1313319087911661  0.1338873372707146
+3                                 Ab_42 0.1186144557403955  0.1158173630445215
+4                                 p_tau 0.1075343239613879  0.1045507794826668
+5                Pancreatic_polypeptide 0.1007222132466663  0.0994546719441395
+6                                 APOE4 0.0992789600479545  0.1000455766732265
+7                                   FAS 0.0860804376143032  0.0870808319358136
+8                             TGF_alpha 0.0801352411817604  0.0790962578965742
+9                     Apolipoprotein_A1 0.0767218226497711  0.0752290629478989
+10     Gamma_Interferon_induced_Monokin 0.0743071935340704  0.0746875720555074
+11                           Fas_Ligand 0.0674970357612631  0.0661627962697078
+12                                 MMP7 0.0674760161383647  0.0649619586303775
+13                                  CgA 0.0665078078713796  0.0665089848653532
+14                               Leptin 0.0651142398516748  0.0610011684504967
+15                       Thrombopoietin 0.0624202269109118  0.0615451703150764
+16                          Vitronectin 0.0611453376637200  0.0602860642684041
+17                 Angiopoietin_2_ANG_2 0.0608584712171963  0.0612079633763858
+18     Pulmonary_and_Activation_Regulat 0.0605090124005823  0.0596292862858354
+19                             TRAIL_R3 0.0600289207332624  0.0608171577959081
+20      Thymus_Expressed_Chemokine_TECK 0.0573802222051441  0.0580284462240219
+21                                 IL_8 0.0560148252101107  0.0548975948875549
+22                                 SGOT 0.0539850548360047  0.0512301609186281
+23                                  MIF 0.0531026624245912  0.0510490792737252
+24                Alpha_1_Microglobulin 0.0509380481959449  0.0511191277073620
+25                          Adiponectin 0.0506373771835833  0.0554136608419015
+26                                MMP_2 0.0502657671402938  0.0499650690547222
+27                              Insulin 0.0482905089784778  0.0484060537193373
+28                          Osteopontin 0.0473992534670606  0.0484008631479224
+29       Kidney_Injury_Molecule_1_KIM_1 0.0458138798413209  0.0472538857397443
+30                                IL_13 0.0457889376798449  0.0428265061062505
+31           Fatty_Acid_Binding_Protein 0.0452012902917634  0.0457413577222826
+32                           MIP_1alpha 0.0448646049384418  0.0471029241916073
+33                     Apolipoprotein_E 0.0442374102843155  0.0447729433856427
+34      Glutathione_S_Transferase_alpha 0.0431663170356018  0.0433722399086458
+35                             Cortisol 0.0422914754145716  0.0399160218756554
+36           Thyroxine_Binding_Globulin 0.0417497275077478  0.0404067501116882
+37                               ENA_78 0.0416301589127375  0.0421026111132036
+38                                 male 0.0413316859377936  0.0428544064177807
+39                              TNF_RII 0.0411381537456939  0.0408388221161413
+40                          Transferrin 0.0394637511079006  0.0405012432907120
+41                                NrCAM 0.0392175628431130  0.0397307318496449
+42                                LOX_1 0.0388350082483308  0.0377355100000994
+43                                IL_11 0.0388083024727003  0.0398211019742044
+44      Connective_Tissue_Growth_Factor 0.0379803508876936  0.0396420440592913
+45                        Lipoprotein_a 0.0374768209203969  0.0362862072258362
+46                              EN_RAGE 0.0363152749193788  0.0372348194090619
+47                            Protein_S 0.0339535172819322  0.0360886509825811
+48                           Cystatin_C 0.0338289701812636  0.0348105563517363
+49                                  IgA 0.0333282866496066  0.0327011835115190
+50           Prostatic_Acid_Phosphatase 0.0330017799334099  0.0311967438297062
+51                                  PYY 0.0325627318249369  0.0334640894349882
+52                               RANTES 0.0318127659400429  0.0324911655174410
+53                                MCP_2 0.0315066761422801  0.0294577837711966
+54                             Sortilin 0.0307554337876255  0.0306638590071392
+55                               HB_EGF 0.0297722507889306  0.0292705416860247
+56                           Calcitonin 0.0284855156657966  0.0263394786009990
+57                            GRO_alpha 0.0280567922119672  0.0297435874377882
+58                von_Willebrand_Factor 0.0272053328024014  0.0263059972959384
+59                                PAI_1 0.0269403659571752  0.0276450017800953
+60                    Apolipoprotein_A2 0.0259396359510833  0.0261851033106252
+61                      Angiotensinogen 0.0259173874593059  0.0283081022948019
+62                     Apolipoprotein_B 0.0257334878604043  0.0276467580392318
+63                                MMP10 0.0255429395804255  0.0250638157340718
+64                            NT_proBNP 0.0250706840124769  0.0280620787009331
+65                                HCC_4 0.0248887614439854  0.0233867068092644
+66                            MIP_1beta 0.0248641854590307  0.0243276531272495
+67                                  AXL 0.0233020838712435  0.0243041786536506
+68                                 IL_6 0.0222624615067021  0.0215794515042835
+69                               PAPP_A 0.0221680257937659  0.0220787746973861
+70      B_Lymphocyte_Chemoattractant_BL 0.0215241849730477  0.0207970216470741
+71         Hepatocyte_Growth_Factor_HGF 0.0212804767986699  0.0224543973397779
+72                       Thrombomodulin 0.0210077992236182  0.0193389282730406
+73                                  age 0.0204666698081446  0.0206019935346952
+74                         Betacellulin 0.0199226188829317  0.0200984074964781
+75                Alpha_2_Macroglobulin 0.0199131555292193  0.0194367165993934
+76                                S100b 0.0195334831754275  0.0177126682238445
+77                Trefoil_Factor_3_TFF3 0.0189961893594835  0.0167111380381539
+78                             IGF_BP_2 0.0183841219237350  0.0183482534632324
+79                   C_Reactive_Protein 0.0180991764065553  0.0180492525523555
+80                     Apolipoprotein_H 0.0168152389737655  0.0197131166945776
+81                     Stem_Cell_Factor 0.0167154099286166  0.0165753055202758
+82                                 PLGF 0.0162710186163791  0.0137022542416678
+83       ACE_CD143_Angiotensin_Converti 0.0147582118548362  0.0173993299292211
+84             Alpha_1_Antichymotrypsin 0.0147218166603414  0.0137674258489347
+85                               TIMP_1 0.0145487404481964  0.0114758328997816
+86                                BMP_6 0.0144099543294745  0.0134767083918962
+87                                MCP_1 0.0141913884274159  0.0177503651614498
+88           IP_10_Inducible_Protein_10 0.0134894375974933  0.0119018018366286
+89                                EGF_R 0.0134035420601307  0.0136771594627240
+90                            Calbindin 0.0128852339500894  0.0107102920715260
+91                           Fibrinogen 0.0128524288287225  0.0125245392594695
+92                         Complement_3 0.0128338058871559  0.0134338320798326
+93                   Creatine_Kinase_MB 0.0123885148663913  0.0134836989702317
+94                                 IL_7 0.0123689881924617  0.0157712086321971
+95                             Resistin 0.0122770209736833  0.0118103808480105
+96                                 IL_3 0.0119178617784431  0.0120800349009855
+97                                MMP_3 0.0115639908973920  0.0119040986687776
+98          Thyroid_Stimulating_Hormone 0.0111564908406895  0.0077868511672867
+99                  Apolipoprotein_CIII 0.0107978621714940  0.0095610651286564
+100                            Ferritin 0.0097191047668033  0.0081279068343400
+101                           Eotaxin_3 0.0095095985184020  0.0094427492056264
+102                            Fetuin_A 0.0090790763038669  0.0104873783714443
+103                                CD5L 0.0090386962608050  0.0109093482688162
+104                              IL_17E 0.0089448043227913  0.0097482338382546
+105                                IL_4 0.0089110702626683  0.0093936262083889
+106                 Complement_Factor_H 0.0082993348463485  0.0095751982775259
+107                   Apolipoprotein_CI 0.0072901725492028  0.0065009038762004
+108           Tamm_Horsfall_Protein_THP 0.0072382759015357  0.0057881161336375
+109                                IL_5 0.0065916223213170  0.0099586373648100
+110                              VCAM_1 0.0064273692816414  0.0077864682117073
+111                 Apolipoprotein_A_IV 0.0060475166953474  0.0082047026158635
+112                           IL_1alpha 0.0056351141059563  0.0052386284313642
+113                 Alpha_1_Antitrypsin 0.0055460539803515  0.0025998628012837
+114                                SHBG 0.0047108554861490  0.0061675883205274
+115                      TTR_prealbumin 0.0043269190266427  0.0061807173731264
+116                              ICAM_1 0.0041092958479461  0.0000379554935495
+117     FSH_Follicle_Stimulation_Hormon 0.0039162148301439  0.0041367033406627
+118                           Prolactin 0.0032683105632894  0.0016517234328270
+119                    Apolipoprotein_D 0.0031715541324877  0.0038749569143538
+120                                 SOD 0.0030932180290735  0.0018234972682437
+121                           Myoglobin 0.0024864471088579  0.0037167765534672
+122                     Serum_Amyloid_P 0.0023833931054960  0.0033321427246064
+123                       Tissue_Factor 0.0022704683387498  0.0024179800394612
+124     ACTH_Adrenocorticotropic_Hormon 0.0021514129012410  0.0012423757440879
+125                                CD40 0.0019275145860677  0.0010948238505909
+126                     Clusterin_Apo_J 0.0014609881526506  0.0002723624709005
+127                       IL_6_Receptor 0.0013811875191219  0.0024706808294852
+128                               IL_16 0.0010428678160593  0.0000758430763493
+129                Beta_2_Microglobulin 0.0003624839198170  0.0018110132072159
+130                               I_309 0.0001458200548108  0.0007150844221072</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(error_plot_svm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>with higher C values error rate in testing data set deacrease until at some point near log(C) = 6. Hence, I would choose a odel fittet with a log(C) values at 6.</code></pre>
+<ol start="7" type="a">
+<li><p>Look at the β coefficient array. What is the dimensionality of β?</p></li>
+<li><p>Include the plot with coefficient traces as a function of C in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero? Look at the coefficients for your chosen model. Identify the most important coefficients to the model.</p>
+<p>The coefficens values for the model are shrinkaging by higher C value, and the model become more simple. At log(C) = 6 the, the coefficients are slightly deminished.</p></li>
+<li><p>Include the plot with the number of support vectors as a function of C in your report and describe/discuss it.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(plot_sv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>Increase of C includes more supporting vectors, which make sence bacuase the margin increases.</code></pre>
+<ol start="10" type="a">
+<li>Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>m_rates_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         control impaired
+imparied      52      200
+control      645        3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluation_matrix</span>(m_rates_train[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_train[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_train[<span class="dv">1</span>,<span class="dv">1</span>],m_rates_train[<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       true_pr  false_pr   true_nr   false_nr      sens      spec
+[1,] 0.7936508 0.2063492 0.9852217 0.01477833 0.9852217 0.7936508</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>m_rates_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         control impaired
+imparied       9       19
+control       69        3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluation_matrix</span>(m_rates_test[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_test[<span class="dv">1</span>,<span class="dv">2</span>],m_rates_test[<span class="dv">1</span>,<span class="dv">1</span>],m_rates_test[<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       true_pr  false_pr   true_nr  false_nr      sens      spec
+[1,] 0.6785714 0.3214286 0.8636364 0.1363636 0.8636364 0.6785714</code></pre>
+</div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="neural-networks" class="level1">
+<h1>8 Neural networks</h1>
+<section id="checkpoint-21-bneural-networks-vs.-linear--and-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-21-bneural-networks-vs.-linear--and-logistic-regression">Checkpoint 21: bNeural networks vs.&nbsp;linear- and logistic regression</h2>
+<ol type="a">
+<li><p>Discuss limitations of linear regression and logistic regression and possible advantages of neural networks.</p>
+<p>Can’t handle other complex data e.g.&nbsp;imaging, text, sound, time-series. Thus, the models can’t train test and clissify based on other than tabular data often measured cross-sectionally.</p></li>
+</ol>
+</section>
+</section>
+<section id="checkpoint-22-design-a-neural-network" class="level1">
+<h1>Checkpoint 22: Design a neural network</h1>
+<p>Think of a classification task where the feature dimensionality is two and there are two possible classes (binary classification). The aim of this checkpoint is to draw a graphical representation of a NN with one hidden layer containing three hidden nodes.</p>
+<ol type="a">
+<li><p>Begin with drawing input nodes, how many input nodes?</p>
+<p>2 inpute beacuase we have two features.</p></li>
+<li><p>Add hidden nodes to your sketch and draw connections between input nodes and the hidden nodes.</p>
+<p>check</p></li>
+<li><p>Add a bias node your sketch and draw connections between this bias node and the hidden nodes.</p>
+<p>check</p></li>
+<li><p>Add two output nodes to the sketch. Draw connections between hidden nodes and the output nodes. check</p></li>
+<li><p>Add another bias node your sketch and draw connections between this bias node and the output node.</p>
+<p>check</p></li>
+<li><p>How are the inputs to each of the hidden nodes computed? Write down the formula for the input to a hidden node.</p></li>
+</ol>
+<p><em>compute activation</em> Ak = g(wk0 + sum_p_j=1(wkj*Xj))</p>
+<ol start="7" type="a">
+<li>Explain what a hidden node activation function is. Write down the formula fora ReLU activation function and make a sketch of hidden node output/activation Ak as a function of its input zk.</li>
+</ol>
+<p>Hidden node activation is how the hidden unit are responding to a particular set of input, hence creating the weight path from the set of hidden notes to predict the outcome.</p>
+<p>f(x) = B0 + sum_k_k=1(Bk*Ak)</p>
+<ol start="8" type="a">
+<li><p>How are the inputs to the output nodes computed. Write down the formula for the inputs to the output nodes.</p>
+<p>Add description f(x) = sum_K_K=1(Bk<em>g(wk0 + sum_p_j=1(wkj</em>Xj)))</p></li>
+<li><p>We will use the softmax activation function for the model’s output. Describe what the network’s two outputs represent. What is the numerical range of the outputs, and how can the network’s outputs be interpreted?</p></li>
+<li><p>Can this network produce non-linear decision boundaries? (Hint: Consider whether linear or non-linear activation functions are used and the network architecture?).</p></li>
+</ol>
+<section id="checkpoint-23-neural-networks---regularization" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-23-neural-networks---regularization">Checkpoint 23: Neural networks - regularization</h2>
+<ol type="a">
+<li><p>Explain when and why it may be necessary to use model regularization in neural networks.</p>
+<p>To mimimize residual error in the trained thetas (weights), and hence improve performace of the traing and testing data.</p></li>
+<li><p>Write down a cost function comprising the error function and a penalty term that penalizes the squared weight values (Hint: See equations 10.14 and 10.31 in ISL). Explain the meaning of two terms in this expression.</p>
+<pre><code>We want
+With the regularitation we keep the architecture of the model, and impoving wieght by minimizing the error.</code></pre></li>
+<li><p>Compare the expression in (b) with the cost function in ridge regularized logistic regression.</p></li>
+<li><p>Explain how a suitable value for the regularization parameter λ can be chosen.</p>
+<p>Similiar when the error rate are lowest for both training and testing data set</p></li>
+</ol>
+</section>
+<section id="checkpoint-24-neural-network---csf-biomarker-data" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-24-neural-network---csf-biomarker-data">Checkpoint 24: Neural network - CSF biomarker data</h2>
+<p>In this checkpoint you will analyse the CSF biomarker data using a feed-forward neural network. The goal of the analysis is to build a neural network to predict group membership (control/impaired) based on 130 CSF features.</p>
+<p>• Open the script main5a.m / main5a.R and review it to understand the different steps in the script. Use the script to answer the following:</p>
+<ol type="a">
+<li><p>Load the data set csfBiomarkers.txt. Describe the data, what is the size of the data set? how many observations and features?</p>
+<p>100 obs and 131 variables</p></li>
+<li><p>Describe the neural network architecture. How many hidden nodes and hidden layers?</p>
+<p>The NN are based on 2 hidden layers and 8 hidden nodes, and 131 inputs.</p></li>
+<li><p>Make a sketch showing the structure of this neural network. What is the number of parameters in the neural network?</p>
+<p>insert figure</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="dv">131</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span><span class="sc">+</span><span class="dv">1</span><span class="sc">*</span><span class="dv">8</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>parameters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1200</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li><p>Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation?</p>
+<p>10 folds</p></li>
+<li><p>Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used?</p>
+<p>2^seq(-12, 5, by = 1)</p></li>
+<li><p>The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.</p>
+<p>The first part is splitting the data into train and test by k folds. The second part, is to rund the neural network</p></li>
+<li><p>Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss it. Also discuss the curves in terms of the bias-variance trade-off. How would you choose the “best” model? For the selected model report the training and test error.</p>
+<p>I will chose model with log(lambda) = -5, because it has the best performance in error rate in traning and test set combined. I assume that the bias has decreased, and variance has increased, which give a small increase in training dataset. However the sweetspot between these can be found at -5.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#source(here("R/day_3_code/main5a.R"))</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(error_plot)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="a">
+<li><p>Can we interpret the weights/coefficients of a neural network in the same way as we did for logistic regression? Can we identify important features by looking at the weights directly?</p>
+<p>No, we can’t, as we cant interpret the hidden weights in the hidden layers. Maybe thorugh more advanced exploration it will be possible.</p></li>
+<li><p>Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+</section>
+<section id="checkpoint-25-neural-networks-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-25-neural-networks-challenges">Checkpoint 25: Neural networks, challenges</h2>
+<ol type="a">
+<li>Discuss challenges with neural networks.</li>
+</ol>
+</section>
+</section>
+<section id="pca" class="level1">
+<h1>PCA</h1>
+<section id="checkpoint-26-pca---using-principal-components" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-26-pca---using-principal-components">Checkpoint 26: PCA - using principal components</h2>
+<p>Suppose that we have the following five data points in R3 (3-dimensional data) x1 x2 x3 x4 x5 xi1 -2 -2 0 2 2 xi2 -2 2 0 -2 2 xi3 -4 0 0 0 4 The variables in this data set has zero mean. Principal component analysis of the data set has provided the following three vectors ϕ1 = (0.41, 0.41, 0.82)T , ϕ2 = (−0.71, 0.71, 0.00)T and ϕ3 = (0.58, 0.58,−0.58)T.</p>
+<ol type="a">
+<li>Calculate and report the principal component scores zi1, zi2, and zi3 for each of the five data points.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>zi <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2,x3,o11,o12,o13)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    z <span class="ot">=</span> x1<span class="sc">*</span>o11 <span class="sc">+</span> x2<span class="sc">*</span>o12 <span class="sc">+</span> x3<span class="sc">*</span>o13</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(z)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># x1</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>z11<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>z21 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>z31 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">4</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># x2</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>z12<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>z22 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>z32 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="co"># x3</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>z13<span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>) <span class="co"># z1</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>z23 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>z33 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a><span class="co"># x4</span></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>z14 <span class="ot">&lt;-</span> <span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>)<span class="co"># z1</span></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>z24 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>z34 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a><span class="co"># x5</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>z15 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="fl">0.41</span>, <span class="fl">0.41</span>, <span class="fl">0.82</span>)<span class="co"># z1</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>z25 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="sc">-</span><span class="fl">0.71</span>, <span class="fl">0.71</span>, <span class="fl">0.00</span>)<span class="co"># z2</span></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>z35 <span class="ot">&lt;-</span><span class="fu">zi</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>, <span class="fl">0.58</span>, <span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.58</span>)<span class="co"># z3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li>Calculate and report how big a proportion of the total variance is captured by each of the individual individual principal components (PV E1, PV E2, and PV E3). Create a scree plot from these and describe and comment on the plot.</li>
+</ol>
+<p>PV E1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>PV_E1 <span class="ot">&lt;-</span> (z11<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z12<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z13<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z14<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z15<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>PV_E2 <span class="ot">&lt;-</span> (z21<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z22<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z23<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z24<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z25<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>PV_E3 <span class="ot">&lt;-</span> (z31<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z32<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z33<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z34<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z35<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">5-1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>tot_var <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,PV_E1,PV_E2,PV_E3), <span class="at">nrow=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(tot_var[,<span class="dv">2</span>], <span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab =</span> <span class="st">"zi"</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="excercise_doc_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>((z11<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z21<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z31<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.0086</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>((z12<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z22<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z32<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Inf</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>((z13<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z23<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z33<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>((z14<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z24<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z34<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">0</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Inf</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>((z15<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z25<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>z35<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>))) <span class="co"># x5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.0086</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Make a plot of the five data points embedded into the 2-dimensional subspace that accounts for most of the variance in the data.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="4" type="a">
+<li>From the embeddings in (c) compute the reconstructions of the embedded points (eqn. (9)). Compare these reconstructions with the original data points and discuss the quality/accuracy of the reconstruction.</li>
+</ol>
+</section>
+<section id="checkpoint-27-limitations-of-pca" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-27-limitations-of-pca">Checkpoint 27: Limitations of PCA</h2>
+<ol type="a">
+<li><p>In the figure above, we have plotted three different 2-dimensional data sets. Make a sketch/drawing of how you expect the scree plot to look for each of the three data sets. Include the drawing in your report and explain your answer.</p></li>
+<li><p>For which of the data sets will the proportion of explained variance be largest for the first principal component? Explain your answer.</p></li>
+<li><p>For which of the data sets would dimensionality reduction by PCA make most sense? Explain your answer.</p></li>
+</ol>
+</section>
+<section id="checkpoint-28-pca---body-density-data" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-28-pca---body-density-data">Checkpoint 28: PCA - body density data</h2>
+<p>The body density data set has 252 observations and 13 features To explore the data, we could do 2-dimensional scatterplots of the data, each of which contains the 252 observations’ measurements plotted according two of the features. However, plotting all combinations of two different features would give   13 2   = 13∗(13−1) 2 = 78 plots, which quickly becomes overwhelming. Instead, we can use PCA to project the data onto a low-dimensional subspace that captures most of the variance in the data. E.g. a 2-dimensional space spanned by the two principal components that accounts for most of the variance and then plot the data in that space. Open the script main6a.m / main6a.R and review it to understand the different steps in the script.</p>
+<ol type="a">
+<li><p>Load the data, and write your own code to make scatter plots of a few featurepairs. Try to find examples “interesting” feature pairs, include the corresponding scatter plots in your report and describe/discuss these.</p></li>
+<li><p>Use the script to create a correlation plot showing the correlation between individual feature pairs. Include the plot in your report, describe the plot and discuss the general correlation structure between features.</p></li>
+<li><p>Use the script to generate a figure showing the standard deviation of individual features. Describe and discuss the plot. Explain the impact of large differences in standard deviation across features, and explain why it may be preferable to scale individual features before PCA.</p></li>
+<li><p>Use the script to make scatter plots of feature pairs with lines representing the PCA axes. Run the code for featureIdx = [6 13];, include the plots in your report and describe/discuss the plots. Does standardization influence the result? Also report and discuss the percentage variance explained for the standardized vs.&nbsp;non-standardized data. Also try to explore a few other combinations of feature pairs, include the plot in your report and discuss the results.</p></li>
+<li><p>Use the script to run PCA on data set with all 13 features and to create a third figure with three subplots. Include the plots in your report and describe what the plots show. Why are there two different plots of the first two principal components? Describe their differences and discuss the advantage/disadvantage of standardization. (f) Discuss the limitations of representing the data in 2-dimensional scatter plots. (Hint: consider the amount of variance explained). Argue whether PCA is suitable for providing a low dimensional representation of this particular data set (Hint: look at the third plot in the figure from (e) above).</p></li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

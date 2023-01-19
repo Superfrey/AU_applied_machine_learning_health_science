@@ -1,0 +1,914 @@
+```{r, include=FALSE}
+library("here")
+```
+
+## Excercise Day 1
+
+### Introduction
+
+## Check point 1: Supervised learning example
+
+*Example 1* Research questions: Could we predict HbA1c given various measurement of cholesterol, bmi, age, blood pressure, and sex.
+
+Method: Linear regression
+
+Data set: tabular data set with age, sex, body measures and biochemical measures.
+
+*Example 2*
+
+##Check point 2:
+
+Find part from ECG nodes in ECG data to detect early high risk of CVD event. Mixed inference and prediction. As ECG have large variability, I believe to include many recordings (\> 1000).
+
+Methods: Deep learning neural network ?
+
+Data: Time to event data - ECG data for each individuals - Hospital records of CVD events
+
+## Checkpoint 4: Ï) Linear regression - body density data In this checkpoint you will analyse the body density data using linear regression. The goal is to build a linear regression model to predict body density from chest circumference measurements. • Open the script main1a.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself.
+
+Use the script main1a.m / main1a.R and your code to answer the following:
+
+(a) Load the data set bodyMeasurementsSingleTrainTest.txt. Describe the data, what are the sizes of the training- and test sets? how many observations and features? what is the numerical range of the variables?
+
+    *test = 244 obs with 2 variables train = 8 obs with 2 variables*
+
+(b) Identify the part for of the script that is used for creating the polynomial expansion of the input variable. Try do create polynomial expansions with different polynomial order from 1 to 7, how many columns/features are there in the resulting data matrices?
+
+    *n+1 for each polynomial increase (1 polynum = 1 features and 2 polynum = 2 features)*
+
+(c) Part of the code is scaling the individual columns of the polynomial regressors. Explain how this scaling is done and why the scaling may be necessary (Hint: what is the numerical range of the individual columns?).
+
+    
+
+(d) Type doc fitglm in Matlab or ?glm in R and use a bit of time to familiarize yourself with this function. What are the inputs to the function and what is the output?
+
+   *GLM is generalised linear model, and can be used for a variety of regression based defined familiy. The gaussian is used for linear regression with option for polynomial flexibility. The inputs are continuous and the output is a predicted continuous response.*
+
+(e) Explain how training error and test error are quantified in the script?
+
+    *Training error is the mean of the squared difference between errors, and is based on the difference between observed value from the training data and predicted value from the training data set.*
+
+    *Test error is the mean of the squared difference between errors, and is based on the difference between observed value from the test data set and predicted value from the training dataset.*
+
+(f) Run the analysis with polynomial order ranging from 1 to 7 (Hint: include a for-loop in the script). For each of these seven models, make a plot of body density (ordinate) vs. chest circumference (abscissa) for the training- and test data as well as the model's predictions (all three in the same plot). Include the plots in your report and describe/discuss the plots.
+
+```{r, include=FALSE}
+source(here("R/day_1_code/main1a.R"))
+
+```
+
+##ADDPLOT!!!
+
+(g) Write your own code to make a plot of training error and test error vs. polynomial order (order 1 to 7). Include the plot in your report and describe/discuss the plot. Do you observe severe overfitting for some polynomial orders?
+
+```{r}
+plot(MSE_error_plot)
+head(MSE_poly,7)
+```
+
+## Checkpoint 5: b Training- and test errors
+
+(a) Explain the difference between a training- and a test data. Also explain the difference between training- and test error.
+
+    The training data is used for training the models for predicting a certain outcome. The test data is used to test the trained model, to evaluate how well the trained model are predicting. The tools for evaluate the models performance is based on training and testing error. The training error are the error from the devolped model on the trained data point, where it is the same for testing, just focusing on the testing data points.
+
+(b) Argue why we typically are interested in good model performance in terms of low test error rather than in terms of low training error.
+
+    We like to prioritize low error test results because the fitted model true evaluation depends how it fit with the validation points from test data set.
+
+## Checkpoint 6: b Do section 2.4 conceptual exercise 3. in ISL (ISL page 53).
+
+3.  We now revisit the bias-variance decomposition.
+
+
+(a) Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.
+
+```{r, echo=FALSE}
+plot(NULL, xlim=c(0,1), ylim=c(0,1), xlab="Flexibility", ylab="Error")
+
+# Generate fake data for the curves
+x <- seq(0, 1, length.out=100)
+bias <- x^2
+variance <- (1 - x)^2
+training_error <- bias + variance
+test_error <- training_error + 0.1*x
+bayes <- 0.25*x
+
+# Add the curves to the plot
+lines(x, bias, col="red")
+lines(x, variance, col="blue")
+lines(x, training_error, col="green")
+lines(x, test_error, col="orange")
+lines(x, bayes, col="purple")
+
+# Add a legend
+legend("topright", c("Bias", "Variance", "Training Error", "Test Error", "Bayes Error"), col=c("red", "blue", "green", "orange", "purple"), lty=1)
+
+# Annotate the plot to show the expected behavior of the training error and test error curves
+arrows(x0=0.7, y0=0.6, x1=0.9, y1=0.8, length=0.1, angle=90, code=3)
+text(x=0.8, y=0.7, "Overfitting", cex=0.8)
+arrows(x0=0.2, y0=0.3, x1=0.0, y1=0.1, length=0.1, angle=90, code=3)
+text(x=0.1, y=0.2, "Underfitting", cex=0.8)
+```
+
+**(b) Explain why each of the five curves has the shape displayed in part (a).**
+
+    As training error decreases because of better fitting, however overfitting is introduced and causes increase in test error. Bias decrease in training data with the high complexity. However, the trade off is that variance are increasing. So we want to chose the flexibility point were bias and variance in combination are lowest.
+
+## Checkpoint 7:
+
+Explain, in your own words, what a training set is, a validation set is, and a test set is? Why is this partition of data needed? Explain how k-fold cross validation is implemented. Explain how leave-one-out (LOO) cross validation is implemented. What are the advantages and disadvantages of k-fold cross validation relative to the validation set approach and the LOO cross validation approach?
+
+    Training set is data that is used for training the prediction model, where validation is used for evaluated how well the model predicts the outcome in interest.
+
+## Checkpoint 8:
+
+R users: By using the functions createDataPartition and createFolds we can create random partitions of data.
+
+• Look at the help text for these functions and use a bit of time to familiarize yourself with the functions.
+
+(a) Run the command c = createDataPartition(y = 1:20, p = 0.8) and explain what the function does. Also describe the content of the variable c.
+
+    It creates a list of numbers (series) of partition from 1 - 20
+
+(b) Run the command c = createFolds(y = 1:20, k = 10, returnTrain = TRUE) and explain what the function does. Also explain the content of the variable c.
+
+    CreateFold split up the data in k groups. Here c are devided into 10 k-folds with 20 vector outcomes.
+
+(c) Explain why it is generally recommended to run e.g. the command set.seed(0) before creating the random partitions.
+
+    To set up the seed before deviding the dataset and doing the analysis, hence obtain reproduceability.
+
+## Check point 9
+Linear regression - body density data - cross validation In this checkpoint you will analyse the body density data using linear regression (with polynomial regressors), and the goal is to build a linear regression model to predict body density from chest circumference measurements. You will use k-fold cross validation to evaluate model performance for different polynomial order.
+
+• Open the script main1b.m and review it to understand the different steps in the script. Some of the code needed to answer this checkpoint is already provided in the script, but you also need to do a bit of coding yourself. Use the script main1b.m / main1b.R and your code to answer the following:
+
+(a) Load the data set bodyMeasurementsSingleCV.txt. Describe the data, what is the size of the data set? how many observations and features?
+
+    252 obs and 2 features
+
+(b) Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross validation?
+
+    10 k-folds
+
+(c) The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.
+
+    The fist part of the loop is slitting the training data and this will be done K times (10 in this case). Each data set will be included another loop with conducting training a linear model with flexibility of order m ( up till 7 in this case). Each model will tested on each test data set and errors estimates from train and test evaluation will be extrated.
+
+(d) Run the script. Look at the plot of training and test error (cross-validation error) (ordinate) vs. polynomial order (abscissa) (both error curves in same plot). Include the plot in your report and describe/discuss it. Are the curves as expected? do you observe severe overfitting (compare with your result from Checkpoint 4)? if not, try to explain why not (Hint: look at the number of training observations and model flexibility). For which polynomial order do you observe the lowest test error?
+
+```{r, echo=FALSE}
+
+source(here("R/day_1_code/main1b.R"))
+
+plot(plot_k_fold)
+```
+
+
+    We do not observe the same severity as the earlier models. The overfitting seem first to be slightly introduced after 5 orders in polynomial. Again the best model would be using 2 orders in polynomial as this has the lowest value in MSEtest. The improvement of the model is expected as we are using more data for training dataset and we are including cross-validation.
+
+
+# Excercise Day 2
+
+# Logistic Regression
+
+## Checkpoint 10: The logistic regression model Suppose that your input data xi has a single predictor xi1, and suppose that the logistic regression model has parameters β0 = 1 and β1 = 1.
+
+(a) Make a drawing/plot with curves of i) the posterior probability of class 0 P (y = 0\|xi) as a function of xi1 and ii) the posterior probability of class 1 P (y = 1\|xi) as a function of xi1, with xi1 ranging from -6 to 6. Remember to label each of the curves, to label axes in your drawing, and also remember to put tick labeling (numeric) on the axes.
+
+```{r, echo=FALSE}
+# Generate some example data
+set.seed(123)
+x1 = rnorm(100, 0, 1)
+y = rbinom(100, 1, 0.5)
+
+# Define the range of xi1
+x1_range = seq(-6, 6, 0.1)
+
+# Calculate the posterior probabilities for class 0 and class 1
+post_prob_0 = 1 / (1 + exp(-0.5 + 0.5*x1_range))
+post_prob_1 = 1 - post_prob_0
+
+# Plot the posterior probabilities as a function of xi1
+plot(x1_range, post_prob_0, type = "l", xlab = "xi1", ylab = "P(y = 0 | xi)", 
+     main = "Posterior Probabilities of Class 0 and 1", col = "blue")
+lines(x1_range, post_prob_1, col = "red")
+
+legend("topright", legend = c("P(y = 0 | xi)", "P(y = 1 | xi)"),
+       col = c("blue", "red"), lty = 1)
+```
+
+(b) Explain how you can classify a given input xi by using the posterior probabilities, and indicate the decision boundary/threshold on your drawing/plot above.
+
+*Based on xi will the classification be 0 from -6 to 1 because the have the highest probability wihch is \> 0.5. Afterwards, beyond xi > 1 the probability for y=1 is >0.5, and hence will classify to category 1.*
+
+(c) Make another drawing/plot with the log-odds ratio as a function of xi1.
+
+```{r, echo=FALSE}
+log_or <- post_prob_1/post_prob_0
+log_or <- log(log_or)
+plot(x1_range, log_or, type = "l", xlab = "xi1", ylab = "log OR", 
+     main = "Log odds ratio of being in class 1 compared to class 0", col = "blue")
+abline(h = x1_range==1)
+```
+
+(d) Explain how you can classify a given input xi by using the log-odds ratio, and indicate the decision boundary/threshold on your drawing/plot above.
+
+*When OR are \>1, the probability for being in class 1 is higher than the probability for being in class 0. Like the first plot the threshold can be found at xi = 1.*
+
+(e) Suppose that we have three test samples For each of these three samples, compute P (y = 1\|xi) and compute the predicted the class label.
+
+![Three samples]here::here("doc/pics/Screenshot%202023-01-11%20at%2008.30.51.png"))
+    
+
+```{r}
+log_funk <- function(x) {
+post_prob_1 <- exp(1+1*x)
+post_prob_0 <- 1+post_prob_1
+Y_Ix <- post_prob_1/post_prob_0
+
+return(Y_Ix)
+}
+```
+
+```{r}
+p_v <- c(-2,0,2)
+
+for (i in p_v) {
+  y_val <- log_funk(i)
+  print(y_val)
+}
+
+```
+
+## Checkpoint 11: Logistic regression - CSF biomarker data
+
+In this checkpoint you will analyse the CSF biomarker data using logistic regression. The goal of the analysis is to build a logistic regression model to predict group membership (control/impaired) from a single CSF feature tau. • Open the script main2a.m / main2a.R and review it to understand the different steps in the script.
+
+```{r}
+source(here::here("R/day_2_code/main2a.R"))
+```
+
+
+(a) Run the first code section %% Import data etc.. What is the size of the data set? How many features and observations? Describe the response variable y, what type of variable is it and what is its content? How many subjects are there in each group?
+
+    100 obs and 131 features
+    
+```{r, echo=FALSE}
+table(data$group)
+```
+
+(b) Explain how data is divided into a training set and a test set, and explain the meaning of stratification. Run the second code section %% Divide into training and test sets. Compute the class proportions in the training set and in the test set and report these, and verify that class proportions are preserved after the data partitioning.
+
+    By using the code createDataPartition, and specify that Y should be account for the two outcomes, and define that 90% of data goes to training.
+
+(c) Run the code section %% Train model, predict, and plot model. Describe the variable catInfo and its content. Describe the model outputs yhatTrainProb and yhatTestProb, what does these represent? Describe the variables yhatTrain and yhatTest, what do these represent? Include the plot of model output vs. input, describe the plot, and explain how classification can be performed based on this plot.
+
+*catInfo is the variable including the labels of the group response (impaired/control). yhatTrainProb is the predicted groups in training data set based on the trained model, and  yhatTestProb is the predicted groups in the testing data set based on the trained model (validation of the model). yhatTrain, yhatTest . Approximately, *
+
+```{r}
+#| echo: false
+plot(plot_response)
+```
+
+
+(d) In the third code section, the model predictions are converted to categorical data to be used as input to the confusionchart (Matlab) confusionMatrix (R) function for plotting the confusion matrix. Look at the help text for this function and use a bit of time to familiarize yourself with the function. Run the forth code section %% Plot confusion matrix, include the plot in your report, and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.
+
+```{r}
+
+```
+
+(e) You will now do almost the same analysis, but you will now use 10-fold cross-validation for model evaluation. Open the script main2b.m / main2b.R and review it to understand the different steps in the script. Run the script. Include the plot of the confusion matrices for the trainingand test/validation data in you report and describe/discuss it. Also explain how the confusion matrices are computed across the cross-validation iterations. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.
+
+## Checkpoint 12: Regularization
+
+(a) Explain when and why it may be necessary to use model regularization.
+
+    To constrain the flexibility/complexity of the model and decrease the MSE, .
+
+(b) (1) Write down the penalized cost function for linear regression for each of the following penalty/shrinkage terms: (i) ridge (ℓ2), (ii) lasso (ℓ1).
+
+*In ridge, the values shrinkage close to zero and MSE decrease until a certain value. In lasso, some coefficients shrink to zero and the most important features are left.*
+
+(2) Explain meaning of the different elements of the expressions in (1).
+
+*The residual sum of sqaure that, sum each obesevation true value minus their predicted value.*
+
+## Checkpoint 13: b Regularization, training- and test errors, and biasvariance trade-off
+
+(a) Provide a sketch of how coefficient estimates typically change with the strength of the regularization parameter λ for the ridge and the lasso penalty, respectively. Describe/discuss the curves and their similarities/differences.
+
+*Ridge /* *Lasso*
+
+![](Screenshot%202023-01-11%20at%2010.58.46.png){width="296"}
+
+![](desktop/r_directory/courses/AU_applied_machine_learning_health_science/doc/pics/Screenshot%202023-01-11%20at%2010.58.24.png){width="296"}
+
+    In ridge, all coefficients are shrinkaging collectively, where in lasso som coef shrink to 0 and som e increases in beta value.
+
+(a) Provide a sketch of typical training error and test error on a single plot, as a function of the regularization parameter λ. λ should be on the x-axis, and the y-axis should represent the values for each curve. Make sure to label each one.
+
+Ridge /lasso
+![](desktop/r_directory/courses/AU_applied_machine_learning_health_science/doc/pics/Screenshot%202023-01-11%20at%2011.06.44.png)
+
+(b) Explain why each of the two curves has the shape displayed in (a).
+
+*Squaredbias (black), variance(green,), test error(purple). Between the variance and bias there occurs a sweet optimal spot for MSE, where MSE is lowest. Afterward, the bias increases and the variance decreases.*
+
+(c) Explain how model complexity changes with λ, and discuss your answer in terms of the bias-variance trade-off.
+
+*see above discription*
+
+(d) Explain how the suitable regularization strength is chosen in a real-world analysis.
+
+*By using cross-validation, and observe the *
+
+##Checkpoint 14: Ï) Linear regression - body density data - ridge regularization
+
+In this checkpoint you will analyse the body density data using linear regression, and the goal is to build a ridge regularized linear regression model to predict body density based on subjects' age, height, weight, and 10 circumference measurements (13 input features in total). You will use k-fold cross-validation to evaluate model performance for different regularization strengths.
+
+• Open the script main3a.m / main3a.R and review it to understand the different steps in the script.
+
+Use the script and your code to answer the following:
+(a) Load the data set bodyMeasurements.txt. Describe the data, what is the size of the data set? how many observations and features? 
+
+252 obs with 14 features
+
+(b) Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation? 
+
+*Using createKolfold where there are used 10 k-folds*
+
+(c) Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used? 
+
+*lambda = 2^seq(5, -15, by = -0.5) spanning form 5 to -15 by each -0.5*
+
+(d) The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script. 
+
+*In the first loop, we are defining the trianing and the testing data set by each k-folds, then a fitted model with diffenent lambda values are established using the training set, by the function glm family gaussian. Then the predicted value for training and testing data set are done. In the second loop, we defin matricises with MSE (as ridge principals), by the different lambda values.*
+    
+(e) Identify the lines where data is being standardized in the script. Explain how standardization is done, and why it is generally recommended to standardize data when using shrinkage regularization.
+
+*
+
+(f) The fitting function has a parameter alpha. Explain what this parameter is?
+
+*
+
+(g) Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss it. 
+
+*
+
+(h) How would you choose the "best" model? For the selected model report the training and test error.
+
+*
+
+(i) Look at the β coefficient array. What is the dimensionality of β?
+
+<!-- -->
+
+(j) Include the plot with coefficient traces as a function of λ in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero?
+(k) Look at the coefficients for your chosen model. Identify the most important coefficients to the model.
+
+## Checkpoint 15: ÏLogistic regression - CSF biomarker data - lasso regularization
+In this checkpoint you will analyse the CSF biomarker data using logistic regression with lasso regularization. The goal of the analysis is to build a logistic regression model to predict group membership (control/impaired) based on 130 CSF features.
+
+• Open the script main3b.m / main3b.R and review it to understand the different steps in the script.
+
+Use the script to answer the following:
+(a) Load the data set csfBiomarkers.txt. Describe the data, what is the size of the data set? how many observations and features?
+
+(b) Identify the part of the script where the random partition is performed. How many folds are used in the k-fold cross-validation?
+
+(c) Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used?
+
+(d) The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.
+
+(e) Describe meaning of the fitting function’s parameter alpha.
+
+(f) Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss it.
+
+(g) How would you choose the "best" model? For the selected model report the training and test error.
+
+(h) Look at the β coefficient array. What is the dimensionality of β?
+(i) Include the plot with coefficient traces as a function of λ in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero?
+
+(j) Look at the coefficients for your chosen model. Identify the most important coefficients to the model.
+
+(k) Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy,error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.
+
+# 7 Support vector machines
+
+## Checkpoint 16: bmaximal margin classifier
+(a) Do section 9.7 conceptual exercise 3. in ISL (ISL page 399).
+
+3. Here we explore the maximal margin classifier on a toy data set.
+9.7 Exercises 399
+(a) We are given n = 7 observations in p = 2 dimensions. For each
+observation, there is an associated class label.
+Obs. X1 X2 Y
+1 3 4 Red
+2 2 2 Red
+3 4 4 Red
+4 1 4 Red
+5 2 1 Blue
+6 4 3 Blue
+7 4 1 Blue
+Sketch the observations.
+
+```{r}
+hyper <- function(x1,x2) {
+x2_kor  <- 1 + 2*x1-3 
+x1_kor  <- 1 + 3*x2-2
+    kor <- cbind(x1_kor,x2_kor)
+    return(kor)}
+
+hyper(3,1)
+```
+
+
+```{r}
+df <- data.frame(obs = c(1:7),
+                 x1 = c(3,2,4,1,2,4,4),
+                 x2 = c(3,2,4,4,1,3,1),
+                 y = c("red","red","red","red", "blue", "blue", "blue"))
+```
+
+```{r}
+#| echo: false
+df %>% 
+    ggplot(aes(x = x1, y = x2, group = y), color = factor(y))+
+    geom_point(aes(col=y))+
+    geom_abline(slope = 1, intercept = -0.5)+
+    geom_abline(slope = 1, intercept = 0, lty = 2) +
+    geom_abline(slope = 1, intercept = -1, lty = 2)+
+    labs(title="SVM Hard") +
+    ylim(c(-1,4))+
+    xlim(c(-1,4))
+```
+
+(b) Sketch the optimal separating hyperplane, and provide the equation
+for this hyperplane (of the form (9.1)).
+
+
+(c) Describe the classification rule for the maximal margin classifier.
+It should be something along the lines of “Classify to Red if
+β0 +β1X1 +β2X2 > 0, and classify to Blue otherwise.” Provide
+the values for β0, β1, and β2.
+
+The maximize the suporting vector on both sides of the hyperplane to the nearst point. This, will be defined as the maximized margin on both sides, >0 and >0 , respectively.
+
+(d) On your sketch, indicate the margin for the maximal margin
+hyperplane.
+
+
+(e) Indicate the support vectors for the maximal margin classifier.
+
+(f) Argue that a slight movement of the seventh observation would
+not affect the maximal margin hyperplane.
+
+Because the 7th measurement is outside the suporting vector and, thus are not included in the maximal margins
+
+(g) Sketch a hyperplane that is not the optimal separating hyperplane,
+and provide the equation for this hyperplane.
+
+
+(h) Draw an additional observation on the plot so that the two
+classes are no longer separable by a hyperplane.
+
+## Checkpoint 17: Support vector classifier (aka. soft margin SVM)
+
+(a) Discuss the difference between the maximal margin classifier (hard margin SVM) and the support vector classifier (soft margin SVM).
+
+    We define the margin, and find which hyperplane where margin is maximized. In hard margin we want to maximise the parrallel lines of the hyperplane (margin) to the nearest support vectors points on both sides of the hyperplane. In soft margin the support vectors are allowed constrains, and extend the margins, and increase the robustness of the model.
+
+(b) Describe why it may be necessary or beneficial to use the soft margin SVM instead of a hard margin SVM.
+
+    to make a more flexible and 
+
+(c) What are slack variables ϵ?
+
+    The distantance to the corisponding canonical hyperplane. How much salack variables with allow to individaul points.
+
+(d) Discuss the meaning of the regularization parameter C.
+
+    C is to control how much we want to extend our margin variation in canonical hyperplane. When we increase C we tend to include more supporting vectors.
+
+(e) On your sketch from the previous checkpoint, draw an example of a soft margin.
+
+
+
+(f) Mark data points with positive slack variables ϵ.
+
+
+
+(g) Sketch what happens to the canonical hyperplanes with increases in C and decreases in C, and discuss how this is related to the bias-variance trade-off.
+
+With too increased C our canonical hyperplanes includes large distance to each observation and will include more misclassified observation. With the right amount increase in C will create a more robust model the could increse the performance of the model in the testing data.
+
+## Checkpoint 18: Regularization
+(a) Provide a sketch of typical training error and test error on a single plot, as a function of the regularization parameter C. C should be on the x-axis, and the y-axis should represent the values for each curve.
+
+
+(b) Explain why each of the two curves has the shape displayed in (a) (Hint: see g in the previous checkpoint).
+
+With the right amount increase in C will create a more robust model the could increase the performance of the model in the testing data. But with too high C, too much error rate are introduced and more misclassification occur. 
+
+(c) Explain how a suitable amount of regularization is chosen in a real-world application.
+
+Where C has decreased the error rate in testing dataset and are not too increased in the training dataset.
+
+
+## Checkpoint 19: Support vector machine (aka. kernel SVM or non-linear SVM)
+(a) Describe a scenario where use of a non-linear SVM may lead to better performance relative to a linear classifier.
+
+
+
+(b) What is a kernel function?
+
+How much we want to expand our feature space. We can when make non-linear decision boundaries.
+
+
+(c) Describe what an evaluation of the kernel function corresponds to.
+
+## Checkpoint 20: ÏSupport vector machine - CSF biomarker data
+In this checkpoint you will analyse the CSF biomarker data using a support vector
+classifier (soft-margin SVM). The goal of the analysis is to build a support vector
+machine to predict group membership (control/impaired) based on 130 CSF features.
+• Open the script main4a.m / main4a.R and review it to understand the different
+steps in the script.
+Use the script to answer the following:
+
+(a) Load the data set csfBiomarkers.txt. Describe the data, what is the size of
+the data set? how many observations and features?
+
+    131 observation and 131 features
+
+(b) Identify the part of the script where the random partition is performed. How
+many folds are used in the k-fold cross-validation?
+
+    10 K-folds
+
+(c) Identify the part of the script where the range of the regularization parameter
+C is defined. Which sequence of C-values is used?
+
+     Cvalues = 2^seq(15, 0, by = -0.5)
+     
+(d) The script contains two for-loops (one nested within the other). Explain, in your
+own words, how the analysis is performed/structured in the script.
+
+    The first loop includes making the traing and the testing data set by 10 K-fold. The second loop includes the supporting vector machine function to train the model based on the traning data set and different sequnece of C-values. Afterwards the trained model are evaluated the classifier performance and error rate both on the training data and the testing data. 
+
+(e) The function fitcsvm (Matlab) svm (R) is here used to fit the SVM. Describe
+the input parameter C.
+
+    C defines the contraining limits for flexibility of the model epsilon distance. In the svm function we are looping with the sequence of different constraining values.
+
+(f) Run the analysis. Plot the training error and the test error as a function of the
+regularization parameter C. Include the plot in your report and describe/discuss it. Also discuss the curves in terms of the bias-variance trade-off. How would
+you choose the "best" model? For the selected model report the training and
+test error.
+
+```{r}
+source(here("R/day_2_code/main4a.R"))
+
+plot(error_plot_svm)
+```
+
+    with higher C values error rate in testing data set deacrease until at some point near log(C) = 6. Hence, I would choose a odel fittet with a log(C) values at 6.
+
+(g) Look at the β coefficient array. What is the dimensionality of β?
+
+
+
+(h) Include the plot with coefficient traces as a function of C in your report and describe/discuss it. What happens with coefficients with decreased model complexity/ regularization strength? Are any coefficients exactly zero? Look at the coefficients for your chosen model. Identify the most important coefficients to the model.
+
+    The coefficens values for the model are shrinkaging by higher C value, and the model become more simple. At log(C) = 6 the, the coefficients are slightly deminished. 
+
+
+(i) Include the plot with the number of support vectors as a function of C in your report and describe/discuss it.
+    
+```{r}
+plot(plot_sv)
+```
+    
+    Increase of C includes more supporting vectors, which make sence bacuase the margin increases.
+
+
+(j) Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.
+```{r}
+m_rates_train
+evaluation_matrix(m_rates_train[1,2],m_rates_train[1,2],m_rates_train[1,1],m_rates_train[2,2])
+
+m_rates_test
+evaluation_matrix(m_rates_test[1,2],m_rates_test[1,2],m_rates_test[1,1],m_rates_test[2,2])
+
+```
+
+
+
+```{r}
+
+```
+
+# 8 Neural networks
+
+## Checkpoint 21: bNeural networks vs. linear- and logistic regression
+
+
+(a) Discuss limitations of linear regression and logistic regression and possible advantages of neural networks.
+
+    Can't handle other complex data e.g. imaging, text, sound, time-series. Thus, the models can't train test and clissify based on other than tabular data often measured cross-sectionally.
+
+# Checkpoint 22: Design a neural network
+
+Think of a classification task where the feature dimensionality is two and there are two possible classes (binary classification). The aim of this checkpoint is to draw a graphical representation of a NN with one hidden layer containing three hidden nodes.
+
+(a) Begin with drawing input nodes, how many input nodes?
+
+    2 inpute beacuase we have two features.
+
+(b) Add hidden nodes to your sketch and draw connections between input nodes and the hidden nodes.
+
+    check
+
+(c) Add a bias node your sketch and draw connections between this bias node and the hidden nodes.
+
+    check
+
+(d) Add two output nodes to the sketch. Draw connections between hidden nodes
+and the output nodes.
+    check
+    
+(e) Add another bias node your sketch and draw connections between this bias node and the output node.
+
+    check
+    
+(f) How are the inputs to each of the hidden nodes computed? Write down the
+formula for the input to a hidden node.
+
+*compute activation*
+    Ak = g(wk0 + sum_p_j=1(wkj*Xj))
+
+    
+
+(g) Explain what a hidden node activation function is. Write down the formula fora ReLU activation function and make a sketch of hidden node output/activation Ak as a function of its input zk.
+
+Hidden node activation is how the hidden unit are responding to a particular set of input, hence creating the weight path from the set of hidden notes to predict the outcome.
+
+f(x) = B0 + sum_k_k=1(Bk*Ak)
+
+(h) How are the inputs to the output nodes computed. Write down the formula for the inputs to the output nodes.
+
+    Add description
+f(x) = sum_K_K=1(Bk*g(wk0 + sum_p_j=1(wkj*Xj)))
+
+
+(i) We will use the softmax activation function for the model’s output. Describe what the network’s two outputs represent. What is the numerical range of the outputs, and how can the network’s outputs be interpreted?
+    
+
+(j) Can this network produce non-linear decision boundaries? (Hint: Consider
+whether linear or non-linear activation functions are used and the network architecture?).
+
+## Checkpoint 23: Neural networks - regularization
+
+(a) Explain when and why it may be necessary to use model regularization in neural networks.
+
+    To mimimize residual error in the trained thetas (weights), and hence improve performace of the traing and testing data.
+    
+(b) Write down a cost function comprising the error function and a penalty term that penalizes the squared weight values (Hint: See equations 10.14 and 10.31 in ISL). Explain the meaning of two terms in this expression.
+
+        We want
+        With the regularitation we keep the architecture of the model, and impoving wieght by minimizing the error.
+    
+(c) Compare the expression in (b) with the cost function in ridge regularized logistic regression.
+
+    
+    
+(d) Explain how a suitable value for the regularization parameter λ can be chosen.
+    
+    Similiar when the error rate are lowest for both training and testing data set
+    
+    
+
+## Checkpoint 24: Neural network - CSF biomarker data
+In this checkpoint you will analyse the CSF biomarker data using a feed-forward neural network. The goal of the analysis is to build a neural network to predict group membership (control/impaired) based on 130 CSF features.
+
+• Open the script main5a.m / main5a.R and review it to understand the different steps in the script.
+Use the script to answer the following:
+
+(a) Load the data set csfBiomarkers.txt. Describe the data, what is the size of the data set? how many observations and features?
+
+    100 obs and 131 variables
+
+(b) Describe the neural network architecture. How many hidden nodes and hidden
+layers?
+
+    The NN are based on 2 hidden layers and 8 hidden nodes, and 131 inputs.
+
+(c) Make a sketch showing the structure of this neural network. What is the number of parameters in the neural network?
+
+    insert figure
+    
+```{r}
+parameters <- 131*8+8*8+8*8+1*8+1*8+1*8
+parameters
+```
+
+
+(d) Identify the part of the script where the random partition is performed. How
+many folds are used in the k-fold cross-validation?
+
+    10 folds
+
+(e) Identify the part of the script where the range of the regularization parameter λ is defined. Which sequence of λ-values is used?
+    
+    2^seq(-12, 5, by = 1)
+
+(f) The script contains two for-loops (one nested within the other). Explain, in your own words, how the analysis is performed/structured in the script.
+
+    The first part is splitting the data into train and test by k folds. The second part, is to rund the neural network
+
+(g) Run the analysis. Plot the training error and the test error as a function of the regularization parameter λ. Include the plot in your report and describe/discuss
+it. Also discuss the curves in terms of the bias-variance trade-off. How would you choose the "best" model? For the selected model report the training and test error.
+
+     I will chose model with log(lambda) = -5, because it has the best performance in error rate in traning and test set combined. I assume that the bias has decreased, and variance has increased, which give a small increase in training dataset. However the sweetspot between these can be found at -5.
+
+```{r}
+#source(here("R/day_3_code/main5a.R"))
+#plot(error_plot)
+```
+
+
+(h) Can we interpret the weights/coefficients of a neural network in the same way as we did for logistic regression? Can we identify important features by looking at the weights directly?
+
+    No, we can't, as we cant interpret the hidden weights in the hidden layers. Maybe thorugh more advanced exploration it will be possible.
+
+
+(i) Plot the confusion matrix for your chosen model. Include it in your report and describe/discuss it. Based on the numbers in the confusion matrix, compute and report the following performance metrics for the test set: classification accuracy, error rate, true positive rate, true negative rate, false positive rate, false negative rate, sensitivity, and specificity.
+
+```{r}
+#| echo: false
+#cat(sprintf('training error: %.12f',mean(errTrain[,idxLambda])))
+#cat(sprintf('validation error: %.12f',mean(errTest[,idxLambda])))
+#m_rates_train
+#evaluation_matrix(m_rates_train[1,2],m_rates_train[1,2],m_rates_train[1,1],m_rates_train[2,2])
+
+#m_rates_test
+#evaluation_matrix(m_rates_test[1,2],m_rates_test[1,2],m_rates_test[1,1],m_rates_test[2,2])
+```
+
+
+## Checkpoint 25: Neural networks, challenges
+(a) Discuss challenges with neural networks.
+
+# PCA
+
+## Checkpoint 26: PCA - using principal components
+Suppose that we have the following five data points in R3 (3-dimensional data)
+x1 x2 x3 x4 x5
+xi1 -2 -2 0 2 2
+xi2 -2 2 0 -2 2
+xi3 -4 0 0 0 4
+The variables in this data set has zero mean. Principal component analysis of the
+data set has provided the following three vectors ϕ1 = (0.41, 0.41, 0.82)T , ϕ2 =
+(−0.71, 0.71, 0.00)T and ϕ3 = (0.58, 0.58,−0.58)T.
+
+(a) Calculate and report the principal component scores zi1, zi2, and zi3 for each of
+the five data points.
+
+```{r}
+zi <- function(x1,x2,x3,o11,o12,o13)
+{
+    z = x1*o11 + x2*o12 + x3*o13
+
+        return(z)
+}
+
+
+# x1
+x1 <-  c(-2,-2,-4)
+
+z11<- zi(-2,-2,-4, 0.41, 0.41, 0.82) # z1
+z21 <- zi(-2,-2,-4, -0.71, 0.71, 0.00)# z2
+z31 <- zi(-2,-2,-4, 0.58, 0.58, -0.58)# z3
+
+# x2
+z12<- zi(-2,2,0, 0.41, 0.41, 0.82) # z1
+z22 <-zi(-2,2,0, -0.71, 0.71, 0.00)# z2
+z32 <-zi(-2,2,0, 0.58, 0.58, -0.58)# z3
+
+# x3
+z13<- zi(0,0,0, 0.41, 0.41, 0.82) # z1
+z23 <-zi(0,0,0, -0.71, 0.71, 0.00)# z2
+z33 <-zi(0,0,0, 0.58, 0.58, -0.58)# z3
+
+
+# x4
+z14 <- zi(2,-2,0, 0.41, 0.41, 0.82)# z1
+z24 <-zi(2,-2,0, -0.71, 0.71, 0.00)# z2
+z34 <-zi(2,-2,0, 0.58, 0.58, -0.58)# z3
+
+# x5
+
+z15 <-zi(2,2,4, 0.41, 0.41, 0.82)# z1
+z25 <-zi(2,2,4, -0.71, 0.71, 0.00)# z2
+z35 <-zi(2,2,4, 0.58, 0.58, -0.58)# z3
+```
+
+
+(b) Calculate and report how big a proportion of the total variance is captured
+by each of the individual individual principal components (PV E1, PV E2, and
+PV E3). Create a scree plot from these and describe and comment on the plot.
+
+PV E1
+```{r}
+PV_E1 <- (z11^2+z12^2+z13^2+z14^2+z15^2)/(5-1)
+```
+
+```{r}
+PV_E2 <- (z21^2+z22^2+z23^2+z24^2+z25^2)/(5-1)
+```
+
+```{r}
+PV_E3 <- (z31^2+z32^2+z33^2+z34^2+z35^2)/(5-1)
+```
+
+```{r}
+tot_var <- matrix(c(1,2,3,PV_E1,PV_E2,PV_E3), nrow=3)
+```
+```{r}
+matplot(tot_var[,2], type="l", xlab = "zi"
+        )
+```
+
+
+
+
+
+```{r}
+((z11^2+z21^2+z31^2)/((-2^2)+(-2^2)+(-4^2))) # x1
+
+((z12^2+z22^2+z32^2)/((-2^2)+(2^2)+(0^2))) # x2
+
+((z13^2+z23^2+z33^2)/((0^2)+(0^2)+(0^2))) # x3
+
+((z14^2+z24^2+z34^2)/((2^2)+(-2^2)+(0^2))) # x4
+
+((z15^2+z25^2+z35^2)/((2^2)+(2^2)+(4^2))) # x5
+
+```
+
+
+(c) Make a plot of the five data points embedded into the 2-dimensional subspace
+that accounts for most of the variance in the data.
+
+```{r}
+
+```
+
+
+(d) From the embeddings in (c) compute the reconstructions of the embedded points
+(eqn. (9)). Compare these reconstructions with the original data points and
+discuss the quality/accuracy of the reconstruction.
+
+## Checkpoint 27: Limitations of PCA
+(a) In the figure above, we have plotted three different 2-dimensional data sets.
+Make a sketch/drawing of how you expect the scree plot to look for each of the
+three data sets. Include the drawing in your report and explain your answer.
+
+(b) For which of the data sets will the proportion of explained variance be largest for the first principal component? Explain your answer.
+
+(c) For which of the data sets would dimensionality reduction by PCA make most sense? Explain your answer.
+
+## Checkpoint 28: PCA - body density data
+The body density data set has 252 observations and 13 features To explore the data,
+we could do 2-dimensional scatterplots of the data, each of which contains the 252
+observations’ measurements plotted according two of the features. However, plotting
+all combinations of two different features would give
+ 
+13
+2
+ 
+= 13∗(13−1)
+2 = 78 plots, which quickly becomes overwhelming.
+Instead, we can use PCA to project the data onto a low-dimensional subspace that
+captures most of the variance in the data. E.g. a 2-dimensional space spanned by the
+two principal components that accounts for most of the variance and then plot the data in that space. Open the script main6a.m / main6a.R and review it to understand the
+different steps in the script.
+
+(a) Load the data, and write your own code to make scatter plots of a few featurepairs.
+Try to find examples "interesting" feature pairs, include the corresponding scatter plots in your report and describe/discuss these.
+
+(b) Use the script to create a correlation plot showing the correlation between individual feature pairs. Include the plot in your report, describe the plot and discuss the general correlation structure between features.
+
+(c) Use the script to generate a figure showing the standard deviation of individual features. Describe and discuss the plot. Explain the impact of large differences in standard deviation across features, and explain why it may be preferable to scale individual features before PCA.
+
+(d) Use the script to make scatter plots of feature pairs with lines representing the PCA axes. Run the code for featureIdx = [6 13];, include the plots in your report and describe/discuss the plots. Does standardization influence the result? Also report and discuss the percentage variance explained for the standardized vs. non-standardized data. Also try to explore a few other combinations of feature pairs, include the plot in your report and discuss the results.
+
+(e) Use the script to run PCA on data set with all 13 features and to create a third figure with three subplots. Include the plots in your report and describe what the plots show. Why are there two different plots of the first two principal components? Describe their differences and discuss the advantage/disadvantage
+of standardization. (f) Discuss the limitations of representing the data in 2-dimensional scatter plots.
+(Hint: consider the amount of variance explained). Argue whether PCA is suitable for providing a low dimensional representation of this particular data set (Hint: look at the third plot in the figure from (e) above).
+
+
+
